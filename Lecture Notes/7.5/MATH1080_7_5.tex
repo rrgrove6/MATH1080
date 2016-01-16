@@ -121,13 +121,13 @@
 \normalfont \normalsize 
 \textsc{Ryan Grove, Clemson University, MATH1080 - 9} \\ [25pt] % Your name, university, class
 \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-\huge Section 6.3: Volumes by Cylindrical Shells \\ % The assignment title
+\huge Section 7.5: Strategy for Integration \\ % The assignment title
 \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
 \author{Date:} % The due date
 
-\date{\normalsize January 13, 2016} % A custom date
+\date{\normalsize January ???, 2016} % A custom date
 
 \begin{document}
 
@@ -145,86 +145,95 @@ Name: \rule{3.2in}{.01cm}  & {}%Table number: \rule{1in}{.01cm}\\
 
 \section*{\textbf{Lecture:}}
 
-Some volume problems are very difficult to handle by the methods of the preceding section (Disk/Washer). Consider the problem of finding the volume of the solid obtained by rotating about the $y-$axis the region bounded by $y=2x^2-x^3$ and $y=0$. 
-\[\includegraphics[scale=0.4]{6-3pic1.png}\]
-If we slice perpendicular to the $y-$axis (i.e. horizontal slice), we get a washer. But to compute the inner radius and the outer radius of the washer, we'd have to solve the cubic equation $y=2x^2 - x^3$ for $x$ in terms of $y$; that's not easy.\\
+This section presents a collection of miscellaneous integrals in random order where the main challenge is to recognize which technique or formula to use.\\
 \indent
 
-Fortunately, there is an alternate method, called the \underline{\hspace{1in}} \underline{\hspace{1in}} (or method of cylindrical shells), that is easier to use in such a case. Figure 2 shows a cylindrical shell with inner radius $r_1$, outer radius $r_2$, and height $h$. Its volume $V$ is calculated by subtracting the volume $V_1$ of the inner cylinder from the volume $V_2$ of the outer cylinder:\\
+\[\includegraphics[scale=.5]{7-5pic1.png}\]
+\indent\\
+
+\newpage
+\section*{Four-Step Strategy}
+\begin{enumerate}
+\item[\textbf{1.}] \textbf{Simplify the Integrand if Possible.} Use algebraic manipulation or trig identities.\\
+Sometimes the use of algebraic manipulation or trigonometric identities will simplify the integrand and make the method of integration obvious. For example:\\
+\indent
+\begin{align*}
+\ds\int \sqrt{x}(1+\sqrt{x})dx &= \ds\int (\sqrt{x} + x)dx\\
+ \\
+\ds\int \ds\frac{\tan\theta}{\sec^2\theta}d\theta &= \ds\int \ds\frac{\sin\theta}{\cos\theta}\cos^2\theta d\theta\\
+&= \ds\int \sin \theta \cos \theta d\theta\\
+&= \ds\frac{1}{2} \ds\int \sin 2\theta d\theta\\
+\\
+\ds\int (\sin x + \cos x)^2 &= \ds\int (\sin^2 x + 2\sin x \cos x + \cos^2 x)dx\\
+&= \ds\int (1+2\sin x\cos x)dx\\
+\end{align*}
 \indent
 
-\quad \quad \quad \includegraphics[scale=0.4]{6-3pic2.png}\\
+\item[\textbf{2.}] \textbf{Look for an Obvious U-Substitution.}
+% Try to find some function $u=g(x)$ in the integrand whose differential $du=g'(x)dx$ also occurs, apart from a constant factor. For example:\\
+%
+%\[\text{In the integral, } \ds\int \ds\frac{x}{x^2-1}dx
+
+\item[\textbf{3.}] \textbf{Classify the Integrand According to Its Form.}
+\begin{enumerate}
+\item[(a)] \textit{Trigonometric functions}\\
+\item[(b)] \textit{Rational functions} $\implies$ PFD\\
+\item[(c)] \textit{Integration by Parts}\\
+\item[(d)] \textit{Radicals}\\
+\begin{enumerate}
+\item[(i)] If $\ds\sqrt{\pm x^2 \pm a^2}$ occurs, use a trigonomentric substitution.
+\item[(ii)] If $\sqrt[n]{ax+b}$ occurs, use the rationalizing subsitution $u=\sqrt[n]{ax+b}$.\\
+ More generally, this sometimes works for $\sqrt[n]{g(x)}$.\\
+\end{enumerate}
+\end{enumerate}
+
+\item[\textbf{4.}] \textbf{Try Again.} Remember, the first approach you choose might not be the correct or easiest, so if it does not appear to work, try something else:\\
+\begin{enumerate}
+\item[(a)] \textit{Try substitution.} Try something that maybe isn't so obvious.\\
+\item[(b)] \textit{Try parts.} Although mostly used on products of different functions, IBP is sometimes effective on single functions such as inverse trig or log functions.\\
+\item[(c)] \textit{Manipulate the integrand.} Multiplying by the conjugate might help as in the following example:
+\begin{align*}
+\ds\int\ds\frac{dx}{1-\cos x} &= \ds\int \ds\frac{1}{1-\cos x }\cdot \ds\frac{1+\cos x}{1+\cos x} dx = \ds\int \ds\frac{1+\cos x}{1-\cos^2 x}dx\\
+&= \ds\int \ds\frac{1+\cos x}{\sin^2 x}dx = \ds\int\left(\csc^2 x + \ds\frac{\cos x}{\sin^2 x}\right) dx.
+\end{align*}
+\item[(d)] \textit{Relate the problem to previous problems.}\\
+\item[(e)] \textit{Use several methods} Sometimes more than one method is required to evaluate an integral.\\
+\end{enumerate}
+
+\section*{Can We Integrate All Continuous Functions?}
+
+The answer is $\underline{\hspace{0.5in}}$. At least not in terms of the functions that we are familiar with. No matter how hard we try we will never succeed in evaluating 
+\[\ds\int e^{x^2} dx\]
+in terms of the functions we know. (In Chapter 11, however, we will see how to express $\ds\int e^{x^2} dx$ as an infinite series.) The same can be said of the following integrals:
+
+\[\begin{array}{rlll}
+&\ds\int \ds\frac{e^x}{x}dx \hspace{1in}  &\ds\int \sin(x^2)dx \hspace{1in} & \ds\int \cos(e^x)dx\\
+&\ds\int \ds\sqrt{x^3+1}dx \hspace{1in} & \ds\int \ds\frac{1}{\ln x}dx \hspace{1in} & \ds\int \ds\frac{\sin x}{x} dx\\
+\end{array}\]
 \indent
 
-If we let $\Delta r= r_2-r_1$ (the thickness of the shell) and $r=\frac{1}{2}(r_2+r_1)$ (the average radius of the shell), then this formula of a cylindrical shell becomes
-
-\[\underline{\hspace{1.5in}}\]
-and it can be remembered as
-
-\[\underline{\hspace{3in}}\]
-
-\indent
-
-Let $S$ be the solid obtained by rotating about the $y-$axis the region bounded by $y=f(x)$ [where $f(x)\geq 0$], $y=0$, $x=a$, and $x=b$, where $b>a\geq 0$.
-
-\[\includegraphics[scale=0.45]{6-3pic3.png}\]
 
 
-\fbox{
-  \parbox{\textwidth}{
-  \vspace{5pt}
-  
-   The volume of the above solid obtained by rotating about the $y-$axis the region under the curve $y=f(x)$ from $a$ to $b$, is
-   
-   \[V = \underline{\hspace{1.5in}} \quad \quad \text{ where } 0\leq a \leq b\]
-   
-   }}
-   \indent\\
-   \indent
-   
-   %\fbox{
+\end{enumerate}
+%\fbox{
 %  \parbox{\textwidth}{
 %  \vspace{5pt}
 
-\underline{Volume via Shell Method}:
-
-The volume of a solid via Shell Method, in general, is:
-
-\[\ds\int_a^b \text{ } 2\pi  (\text{radius}) \text{ } \cdot \text{ }(\text{height}) \text{ } dx \quad \text{OR} \quad \ds\int_c^d \text{ }2\pi (\text{radius}) \text{ } \cdot \text{ } (\text{height})\text{ } dy.\]
-\indent\\
-\indent\\
-\indent
-
-where \textit{radius} = distance from axis of rotation to slice and \textit{height} = length of slice.\\
-\indent
-
-For Shell Method, a "slice" must be \underline{\hspace{1.15in}} to the axis of rotation.\\
-\indent
 
 
-   
-\newpage
-
-\underline{Example 1}: Find the volume of the solid obtained by rotating about the $y-axis$ the region bounded by $y=2x^2 - x^3$ and $y=0$.
 
 
-\vspace{4.25in}
-
-\section*{Disk/Washer Method vs. Shell Method}
-
-\underline{Example 2}: Find the volume of the solid obtained by rotating about the $y-$axis the region between $y=x$ and $y=x^2$.
 
 
-\newpage
-
-\underline{Example 3}: Find the volume of the solid obtained by rotating about the $x-$axis the region under the curve $y=\sqrt{x}$ from $0$ to $1$.\\
-\indent
-
-\vspace{4.25in}
 
 
-\underline{Example 4}: Find the volume of the solid obtained by rotating the region bounded by $y=x-x^2$ and $y=0$ about the line $x=2$.\\
-\indent\\
+
+
+
+
+
+
+
 
 %----------------------------------------------------------------------------------------
 

@@ -121,13 +121,13 @@
 \normalfont \normalsize 
 \textsc{Ryan Grove, Clemson University, MATH1080 - 9} \\ [25pt] % Your name, university, class
 \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-\huge Section 6.3: Volumes by Cylindrical Shells \\ % The assignment title
+\huge Section 7.3: Trig Substitution \\ % The assignment title
 \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
 \author{Date:} % The due date
 
-\date{\normalsize January 13, 2016} % A custom date
+\date{\normalsize January ???, 2016} % A custom date
 
 \begin{document}
 
@@ -145,86 +145,71 @@ Name: \rule{3.2in}{.01cm}  & {}%Table number: \rule{1in}{.01cm}\\
 
 \section*{\textbf{Lecture:}}
 
-Some volume problems are very difficult to handle by the methods of the preceding section (Disk/Washer). Consider the problem of finding the volume of the solid obtained by rotating about the $y-$axis the region bounded by $y=2x^2-x^3$ and $y=0$. 
-\[\includegraphics[scale=0.4]{6-3pic1.png}\]
-If we slice perpendicular to the $y-$axis (i.e. horizontal slice), we get a washer. But to compute the inner radius and the outer radius of the washer, we'd have to solve the cubic equation $y=2x^2 - x^3$ for $x$ in terms of $y$; that's not easy.\\
+In finding the area of a circle or an ellipse, an integral of the form
+\[\ds\int \sqrt{a^2 - x^2}dx \quad \quad \text{ where } a > 0\]
+arises. If it were
+\[\ds\int x\sqrt{a^2 - x^2} dx,\]
+the substitution $u=a^2 - x^2$ would be effective but, as it stands, $\ds\int \ds\sqrt{a^2 - x^2}dx$ is more difficult.\\
 \indent
 
-Fortunately, there is an alternate method, called the \underline{\hspace{1in}} \underline{\hspace{1in}} (or method of cylindrical shells), that is easier to use in such a case. Figure 2 shows a cylindrical shell with inner radius $r_1$, outer radius $r_2$, and height $h$. Its volume $V$ is calculated by subtracting the volume $V_1$ of the inner cylinder from the volume $V_2$ of the outer cylinder:\\
-\indent
+If we change the variable from $x$ to $\theta$ by the substitution $x=a\sin \theta$, then the identity $1-\sin^2\theta = \cos^2\theta$ allows us to get rid of the root sign:\\
 
-\quad \quad \quad \includegraphics[scale=0.4]{6-3pic2.png}\\
-\indent
-
-If we let $\Delta r= r_2-r_1$ (the thickness of the shell) and $r=\frac{1}{2}(r_2+r_1)$ (the average radius of the shell), then this formula of a cylindrical shell becomes
-
-\[\underline{\hspace{1.5in}}\]
-and it can be remembered as
-
-\[\underline{\hspace{3in}}\]
-
-\indent
-
-Let $S$ be the solid obtained by rotating about the $y-$axis the region bounded by $y=f(x)$ [where $f(x)\geq 0$], $y=0$, $x=a$, and $x=b$, where $b>a\geq 0$.
-
-\[\includegraphics[scale=0.45]{6-3pic3.png}\]
-
-
-\fbox{
-  \parbox{\textwidth}{
-  \vspace{5pt}
-  
-   The volume of the above solid obtained by rotating about the $y-$axis the region under the curve $y=f(x)$ from $a$ to $b$, is
-   
-   \[V = \underline{\hspace{1.5in}} \quad \quad \text{ where } 0\leq a \leq b\]
-   
-   }}
-   \indent\\
-   \indent
-   
-   %\fbox{
-%  \parbox{\textwidth}{
-%  \vspace{5pt}
-
-\underline{Volume via Shell Method}:
-
-The volume of a solid via Shell Method, in general, is:
-
-\[\ds\int_a^b \text{ } 2\pi  (\text{radius}) \text{ } \cdot \text{ }(\text{height}) \text{ } dx \quad \text{OR} \quad \ds\int_c^d \text{ }2\pi (\text{radius}) \text{ } \cdot \text{ } (\text{height})\text{ } dy.\]
-\indent\\
+\[\text{ }\]
 \indent\\
 \indent
 
-where \textit{radius} = distance from axis of rotation to slice and \textit{height} = length of slice.\\
+\[\text{ }\]
+
+Notice the difference between the substitution $u=a^2 - x^2$ (in which the new variable is a function of the old one) and the substitution $x=a\sin\theta$ (the old variable is a function of the new one). This kind of substitution is called \underline{\hspace{1.15in}} substitution.\\
 \indent
 
-For Shell Method, a "slice" must be \underline{\hspace{1.15in}} to the axis of rotation.\\
+In the following table we list trigonometric substitutions that are effective for the given radical expressions because of the specified trigonometric identities. In each case the restriction on $\theta$ is imposed to ensure that the function that defined the substitution is one-to-one.\\
+\indent
+
+\[\includegraphics[scale=0.55]{7-3pic1.png}\]
 \indent
 
 
-   
+\underline{Example 1}: Evaluate $\ds\int \ds\frac{\sqrt{9-x^2}}{x^2}dx$.\\
+\indent
+
+\vspace{3in}
+
+\underline{Example 2}: Find $\ds\int \ds\frac{1}{x^2\sqrt{x^2 + 4}}dx.$\\
+\indent
+
+\vspace{4.5in}
+
+\underline{Example 3}: Find $\ds\int \ds\frac{x}{\sqrt{x^2 + 4}}dx.$\\
+\indent
+
+\vspace{4.5in}
+
+\underline{Example 4}: Evaluate $\ds\int \ds\frac{dx}{\sqrt{x^2 - a^2}}, $ where $a>0$.\\
+\indent
+
+\vspace{4.5in}
 \newpage
-
-\underline{Example 1}: Find the volume of the solid obtained by rotating about the $y-axis$ the region bounded by $y=2x^2 - x^3$ and $y=0$.
-
-
-\vspace{4.25in}
-
-\section*{Disk/Washer Method vs. Shell Method}
-
-\underline{Example 2}: Find the volume of the solid obtained by rotating about the $y-$axis the region between $y=x$ and $y=x^2$.
-
-
-\newpage
-
-\underline{Example 3}: Find the volume of the solid obtained by rotating about the $x-$axis the region under the curve $y=\sqrt{x}$ from $0$ to $1$.\\
+\underline{Example 5}: Find $\ds\int_0^{\frac{3\sqrt{3}}{2}} \ds\frac{x^3}{(4x^2 + 9)^{3/2}}dx$.\\
 \indent
 
-\vspace{4.25in}
+\vspace{4.5in}
+
+\underline{Example 6}: Evaluate $\ds\int \ds\frac{x}{\sqrt{3-2x-x^2}}dx$.\\
+\indent
+
+\vspace{4in}
 
 
-\underline{Example 4}: Find the volume of the solid obtained by rotating the region bounded by $y=x-x^2$ and $y=0$ about the line $x=2$.\\
-\indent\\
+
+
+
+
+
+
+
+
+
 
 %----------------------------------------------------------------------------------------
 

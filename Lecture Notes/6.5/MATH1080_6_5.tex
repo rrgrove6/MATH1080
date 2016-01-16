@@ -121,13 +121,13 @@
 \normalfont \normalsize 
 \textsc{Ryan Grove, Clemson University, MATH1080 - 9} \\ [25pt] % Your name, university, class
 \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-\huge Section 6.3: Volumes by Cylindrical Shells \\ % The assignment title
+\huge Section 6.5: Average Value \\ % The assignment title
 \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
 \author{Date:} % The due date
 
-\date{\normalsize January 13, 2016} % A custom date
+\date{\normalsize January 20, 2016} % A custom date
 
 \begin{document}
 
@@ -145,86 +145,113 @@ Name: \rule{3.2in}{.01cm}  & {}%Table number: \rule{1in}{.01cm}\\
 
 \section*{\textbf{Lecture:}}
 
-Some volume problems are very difficult to handle by the methods of the preceding section (Disk/Washer). Consider the problem of finding the volume of the solid obtained by rotating about the $y-$axis the region bounded by $y=2x^2-x^3$ and $y=0$. 
-\[\includegraphics[scale=0.4]{6-3pic1.png}\]
-If we slice perpendicular to the $y-$axis (i.e. horizontal slice), we get a washer. But to compute the inner radius and the outer radius of the washer, we'd have to solve the cubic equation $y=2x^2 - x^3$ for $x$ in terms of $y$; that's not easy.\\
+
+It is easy to calculate the average value of finitely many numbers $y_1,y_2,\ldots,y_n$:\\
+
+\[y_{\text{ave}}=\hspace{3in}\]
 \indent
 
-Fortunately, there is an alternate method, called the \underline{\hspace{1in}} \underline{\hspace{1in}} (or method of cylindrical shells), that is easier to use in such a case. Figure 2 shows a cylindrical shell with inner radius $r_1$, outer radius $r_2$, and height $h$. Its volume $V$ is calculated by subtracting the volume $V_1$ of the inner cylinder from the volume $V_2$ of the outer cylinder:\\
+But how do we compute the average value of infinitely many numbers or data points?\\
+Consider the following graph of a function, $y=f(x)$:\\
 \indent
 
-\quad \quad \quad \includegraphics[scale=0.4]{6-3pic2.png}\\
+\vspace{1.5in}
+
+
+To compute the average value of a function, $y=f(x)$, $a\leq x \leq b$, let's start by dividing the interval $[a,b]$ into $n$ equal subintervals, each with length:\\
+
+\[\Delta x = \hspace{3.5in}\]
 \indent
 
-If we let $\Delta r= r_2-r_1$ (the thickness of the shell) and $r=\frac{1}{2}(r_2+r_1)$ (the average radius of the shell), then this formula of a cylindrical shell becomes
+Then we choose sample points $x_1^*,\ldots, x_n^*$ in successive subintervals and calculate the average of the function values $f(x_1^*),\ldots,f(x_n^*)$:\\
 
-\[\underline{\hspace{1.5in}}\]
-and it can be remembered as
 
-\[\underline{\hspace{3in}}\]
+\vspace{2.4in}
 
+As $n$ increases the length of the subintervals decreases (we would be computing the average value of a larger number of closely spaced values) thus making the approximation of the average value better and better, so we define...\\
 \indent
 
-Let $S$ be the solid obtained by rotating about the $y-$axis the region bounded by $y=f(x)$ [where $f(x)\geq 0$], $y=0$, $x=a$, and $x=b$, where $b>a\geq 0$.
-
-\[\includegraphics[scale=0.45]{6-3pic3.png}\]
 
 
 \fbox{
   \parbox{\textwidth}{
-  \vspace{5pt}
+  \vspace{5pt} \textbf{Definition:} The \textbf{\underline{average value of $\mathbf{f}$}} on the interval $[a,b]$ is:\\
   
-   The volume of the above solid obtained by rotating about the $y-$axis the region under the curve $y=f(x)$ from $a$ to $b$, is
-   
-   \[V = \underline{\hspace{1.5in}} \quad \quad \text{ where } 0\leq a \leq b\]
-   
-   }}
-   \indent\\
-   \indent
-   
-   %\fbox{
-%  \parbox{\textwidth}{
-%  \vspace{5pt}
+  \[\text{ }\]
+  \indent\\
+  
+  }}
+  
+  
+  \underline{Example 1}: Find the average value of the function $f(x)=1+x^2$ on the interval $[-1,2]$.\\
+  \indent
+  
+  \vspace{1.5in}
+  
+  \indent\\
+  \indent
+  
+  If $T(t)$ is the temperature at time $t$, we might wonder if there is a specific time when the temperature is the same as the average temperature. For the function graphed in Figure 1 below, we see that there are two such times--just before noon and just before midnight.
+  \[\includegraphics[scale=0.37]{6-5figure1.png}\]
+  In general, is there a number $c$ at which the value of a function $f$ is exactly equal to the average value of the function, i.e., $f(c) = f_{\text{ave}}$? The following theorem says, YES, for continuous functions.\\
+  \indent
+  
+  
+\fbox{
+  \parbox{\textwidth}{
+  \vspace{5pt} \textbf{The Mean Value Theorem for Integrals:} If $f$ is continuous on $[a,b]$, then there exists a number $c$ in $[a,b]$ such that\\
+  \indent
+  
+  \[\text{ }\]
+  
+  \indent
+  
+  \[\text{ }\]
+  
+  
+  }}
+  \indent\\
+  
+  \newpage
+  The geometric interpretation of the Mean Value Theorem for Integrals is that, for \textit{positive} functions $f$, there is a number $c$ such that the rectangle with base $[a,b]$ and height $f(c)$ has the same area as the region under the graph of $f$ from $a$ to $b$. (See Figure 2)
+  
+  \[\includegraphics[scale=.37]{6-5figure2a.png} \quad \quad \includegraphics[scale=0.5]{6-5figure2b.png}\]
 
-\underline{Volume via Shell Method}:
 
-The volume of a solid via Shell Method, in general, is:
+\indent
 
-\[\ds\int_a^b \text{ } 2\pi  (\text{radius}) \text{ } \cdot \text{ }(\text{height}) \text{ } dx \quad \text{OR} \quad \ds\int_c^d \text{ }2\pi (\text{radius}) \text{ } \cdot \text{ } (\text{height})\text{ } dy.\]
+\underline{Example 2}: Since $f(x) = 1+x^2$ is continuous on the interval $[-1,2]$, the Mean Value Theorem for Integrals says there is a number $c$ in $[-1,2]$ such that:\\
+\indent
+
+\[\text{ }\]
+
+\[\text{ }\]
+
+In this particular case we can find $c$ explicitly. From Example 1, we know that $f_{\text{ave}}= \underline{\hspace{0.3in}}$, so we have:\\
+\indent
+
+\vspace{0.6in}
+
+So in this case there happen to be two numbers $c=\underline{\hspace{0.4in}}$ in the interval $[-1,2]$ that work in the Mean Value Theorem for Integrals.\\
 \indent\\
 \indent\\
 \indent
 
-where \textit{radius} = distance from axis of rotation to slice and \textit{height} = length of slice.\\
+\underline{Example 3}: Show that the average velocity of a car over a time interval $[t_1,t_2]$ is the same as the average of its velocities during the trip.\\
 \indent
 
-For Shell Method, a "slice" must be \underline{\hspace{1.15in}} to the axis of rotation.\\
+SOLUTION: If $s(t)$ is the displacement of the car at time $t$, then, by definition, the average velocity of the car over the interval is:\\
 \indent
 
-
-   
-\newpage
-
-\underline{Example 1}: Find the volume of the solid obtained by rotating about the $y-axis$ the region bounded by $y=2x^2 - x^3$ and $y=0$.
-
-
-\vspace{4.25in}
-
-\section*{Disk/Washer Method vs. Shell Method}
-
-\underline{Example 2}: Find the volume of the solid obtained by rotating about the $y-$axis the region between $y=x$ and $y=x^2$.
-
-
-\newpage
-
-\underline{Example 3}: Find the volume of the solid obtained by rotating about the $x-$axis the region under the curve $y=\sqrt{x}$ from $0$ to $1$.\\
-\indent
-
-\vspace{4.25in}
-
-
-\underline{Example 4}: Find the volume of the solid obtained by rotating the region bounded by $y=x-x^2$ and $y=0$ about the line $x=2$.\\
+\[\text{ }\]
 \indent\\
+\indent
+
+On the other hand, the average value of the velocity function on the interval is:
+
+\vspace{1.5in}
+
+
 
 %----------------------------------------------------------------------------------------
 

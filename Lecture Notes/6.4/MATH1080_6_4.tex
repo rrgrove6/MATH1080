@@ -121,13 +121,13 @@
 \normalfont \normalsize 
 \textsc{Ryan Grove, Clemson University, MATH1080 - 9} \\ [25pt] % Your name, university, class
 \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-\huge Section 6.3: Volumes by Cylindrical Shells \\ % The assignment title
+\huge Section 6.4: Work  \\ % The assignment title
 \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
 \author{Date:} % The due date
 
-\date{\normalsize January 13, 2016} % A custom date
+\date{\normalsize January 19, 2016} % A custom date
 
 \begin{document}
 
@@ -145,86 +145,113 @@ Name: \rule{3.2in}{.01cm}  & {}%Table number: \rule{1in}{.01cm}\\
 
 \section*{\textbf{Lecture:}}
 
-Some volume problems are very difficult to handle by the methods of the preceding section (Disk/Washer). Consider the problem of finding the volume of the solid obtained by rotating about the $y-$axis the region bounded by $y=2x^2-x^3$ and $y=0$. 
-\[\includegraphics[scale=0.4]{6-3pic1.png}\]
-If we slice perpendicular to the $y-$axis (i.e. horizontal slice), we get a washer. But to compute the inner radius and the outer radius of the washer, we'd have to solve the cubic equation $y=2x^2 - x^3$ for $x$ in terms of $y$; that's not easy.\\
+In Physics, \underline{\hspace{1in}} depends on \underline{\hspace{1in}}. Intuitively, you can think of a force as describing a push or pull on an object. In general, if an object moves along a straight line with position function $s(t)$, then the \textbf{force} $F$ on the object (in the same direction) is given by Newton's Second Law of Motion as the product of its mass $m$ and its acceleration:\\
 \indent
 
-Fortunately, there is an alternate method, called the \underline{\hspace{1in}} \underline{\hspace{1in}} (or method of cylindrical shells), that is easier to use in such a case. Figure 2 shows a cylindrical shell with inner radius $r_1$, outer radius $r_2$, and height $h$. Its volume $V$ is calculated by subtracting the volume $V_1$ of the inner cylinder from the volume $V_2$ of the outer cylinder:\\
+
+\[\underline{\hspace{2in}}\]
+\indent\\
+
+In the SI metric system, the mass is measured in kilograms (kg), the displacement in meters (m), the time in seconds (s), and the force in newtons (N$=$ kg$\cdot$m$/\text{s}^2$). Thus a force of 1 N acting on a mass of 1 kg produces an acceleration of 1 m$/\text{s}^2$. In the US Customary system the fundamental unit is chosen to be the unit of force, which is the \underline{\hspace{1.25in}}.\\
 \indent
 
-\quad \quad \quad \includegraphics[scale=0.4]{6-3pic2.png}\\
+In the case of constant acceleration, the force $F$ is also constant and the work done is defined to be the product of the force $F$ and the distance $d$ that the object moves:\\
 \indent
 
-If we let $\Delta r= r_2-r_1$ (the thickness of the shell) and $r=\frac{1}{2}(r_2+r_1)$ (the average radius of the shell), then this formula of a cylindrical shell becomes
+\[\underline{\hspace{1.5in}} \quad \quad \underline{\hspace{2.5in}}\]
+\indent\\
 
-\[\underline{\hspace{1.5in}}\]
-and it can be remembered as
+If $F$ is measured in newtons and $d$ in meters, then the unit for $W$ is a newton-meter, which is called a joule (J). If $F$ is measured in pounds and $d$ in feet, then the unit for $S$ is a foot-pound (ft-lb), which is about 1.36 J.\\
+\indent\\
+\newpage
+\underline{Example 1}:
+\begin{enumerate}
+\item[(a)] How much work is done in lifting a 1.2-kg book off the floor to put it on a desk that is 0.7 m high? Use the fact that the acceleration due to gravity is $g=9.8\text{m}/\text{s}^2$.\\
+\indent\\
 
-\[\underline{\hspace{3in}}\]
+\vspace{1.25in}
 
+\item[(b)] How much work is done in lifting a 20-lb weight 6 ft off the ground?
+
+
+\vspace{1.25in}
+
+\end{enumerate}
+
+*Notice that in (b), unlike part (a), we did not have to multiply by $g$ because we were given the \textit{weight} (which is a force) and not the mass of the object.\\
+\indent\\
+
+What happens if the force is not constant, but instead variable? Let's suppose the object moves along the $x-$axis in the positive direction, from $x=a$ to $x=b$, and at each point $x$ between $a$ and $b$ a force $f(x)$ acts on the object, where $f$ is a continuous function. If we divide the interval $[a,b]$ into $n$ subintervals with endpoints $x_0, x_1, \ldots, x_n$ and equal width $\Delta x$, and choose a sample point $x_i^*$ in the $i^{\text{th}}$ subinterval $[x_{i-1},x_i]$. Then the force at that point is $f(x_i^*)$. Assuming $n$ is relatively large, then $\Delta x$ is small, and since $f$ is continuous, the values of $f$ don't change very much over the interval $[x_{i-1},x_i]$. In other words, $f$ is almost constant on the interval and so the work $W_i$ that is done in moving the particle from $x_{i-1}$ to $x_i$ is approximately given by:\\
+\indent\\
+
+\[\underline{\hspace{2in}}\]
+\indent\\
+
+Thus we can approximate the total work by:\\
+\indent\\
+
+\[\underline{\hspace{2in}}\]
+
+Now, as $n\to \infty$, this approximation gets better and better, so we define:\\
 \indent
-
-Let $S$ be the solid obtained by rotating about the $y-$axis the region bounded by $y=f(x)$ [where $f(x)\geq 0$], $y=0$, $x=a$, and $x=b$, where $b>a\geq 0$.
-
-\[\includegraphics[scale=0.45]{6-3pic3.png}\]
-
 
 \fbox{
   \parbox{\textwidth}{
   \vspace{5pt}
-  
-   The volume of the above solid obtained by rotating about the $y-$axis the region under the curve $y=f(x)$ from $a$ to $b$, is
-   
-   \[V = \underline{\hspace{1.5in}} \quad \quad \text{ where } 0\leq a \leq b\]
-   
-   }}
-   \indent\\
-   \indent
-   
-   %\fbox{
-%  \parbox{\textwidth}{
-%  \vspace{5pt}
+\textbf{Definition:} The \textbf{work done in moving the object from} $\mathbf{a}$ \textbf{to} $\mathbf{b}$ is:\\
+\indent\\
 
-\underline{Volume via Shell Method}:
+\[\underline{\hspace{2in}} = \underline{\hspace{1.5in}}\]
+\indent
 
-The volume of a solid via Shell Method, in general, is:
-
-\[\ds\int_a^b \text{ } 2\pi  (\text{radius}) \text{ } \cdot \text{ }(\text{height}) \text{ } dx \quad \text{OR} \quad \ds\int_c^d \text{ }2\pi (\text{radius}) \text{ } \cdot \text{ } (\text{height})\text{ } dy.\]
+}}
 \indent\\
 \indent\\
+
+\underline{Example 2}: When a particle is located a distance $x$ feet from the origin, a force of $x^2 + 2x$ pounds acts on it. How much work is done in moving it from $x=1$ to $x=3$?\\
 \indent
 
-where \textit{radius} = distance from axis of rotation to slice and \textit{height} = length of slice.\\
-\indent
+\vspace{1.25in}
 
-For Shell Method, a "slice" must be \underline{\hspace{1.15in}} to the axis of rotation.\\
-\indent
+For the next example we need the following law from physics:\\
 
 
-   
-\newpage
+\begin{quote}
+\underline{\hspace{1.25in}} \underline{\hspace{0.6in}} states that the force required to maintain a spring stretched $x$ units beyond its natural length is proportional to $x$:\\
 
-\underline{Example 1}: Find the volume of the solid obtained by rotating about the $y-axis$ the region bounded by $y=2x^2 - x^3$ and $y=0$.
-
-
-\vspace{4.25in}
-
-\section*{Disk/Washer Method vs. Shell Method}
-
-\underline{Example 2}: Find the volume of the solid obtained by rotating about the $y-$axis the region between $y=x$ and $y=x^2$.
-
-
-\newpage
-
-\underline{Example 3}: Find the volume of the solid obtained by rotating about the $x-$axis the region under the curve $y=\sqrt{x}$ from $0$ to $1$.\\
-\indent
-
-\vspace{4.25in}
-
-
-\underline{Example 4}: Find the volume of the solid obtained by rotating the region bounded by $y=x-x^2$ and $y=0$ about the line $x=2$.\\
+\[\underline{\hspace{1.5in}}\]
 \indent\\
+
+where $k$ is a positive constant (called the \textbf{spring constant}). Hooke's Law holds provided that $x$ is not too large.\\
+\end{quote}
+\indent\\
+
+\underline{Example 3}: A force of 40 N is required to hold a spring that has been stretched from its natural length of 10 cm to a length of 15 cm. How much work is done in stretching the spring from 15 cm to 18 cm?\\
+\indent
+
+\textbf{Solution:} According to Hooke's Law, the force required to hold the spring stretched $x$ meters beyond its natural length is \\
+
+\[\underline{\hspace{1.5in}}\]
+\indent\\
+
+When the spring is stretched from 10 cm to 15 cm, the amount stretched is \underline{\hspace{1.6in}}.\\
+\indent\\
+\indent\\
+\indent\\
+
+Thus $f(x) = \underline{\hspace{0.75in}}$ and the work done in stretching the spring from 15 cm to 18 cm is\\
+\indent\\
+
+\vspace{1.5in}
+
+\underline{Example 4}: A 200-lb cable is 100 ft long and hangs vertically from the top of a tall building. How much work is required to lift the cable to the top of the building?\\
+\indent
+
+\textbf{Solution:} Here we don't have a formula for the force function, but we can use an interval argument similar to what led to the definition above.\\
+\indent\\
+
+\vspace{3.5in}
+
 
 %----------------------------------------------------------------------------------------
 
