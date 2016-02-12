@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Extra Credit Assignment
+% In-class Quiz Template
 % LaTeX Template
 % By: Ryan Grove
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -36,7 +36,11 @@
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
 
-\usepackage{hyperref}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\cfoot{\thepage\ of \pageref{LastPage}}
+
+\usepackage{graphicx}
 
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
@@ -48,43 +52,70 @@
 \normalfont \normalsize 
 \textsc{Ryan Grove, Clemson University, MATH1080 - 9} \\ [25pt] % Your name, university, class
 \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-\huge Extra Credit \#4 \\ % The assignment title
+\huge In-class Quiz \#7 \\ % The assignment title
 \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
-\author{Due date:} % The due date
+\author{Date:} % The due date
 
-\date{\normalsize February 12, 2016} % A custom date
+\date{\normalsize February 19, 2016} % A custom date
 
 \begin{document}
 
 \maketitle % Print the title
 
-%----------------------------------------------------------------------------------------
-%	Description
-%----------------------------------------------------------------------------------------
-
-\section*{\textbf{Description}}
-
-You received another person's resume. Using a blue or black pen, make extensive suggestions on how the person can improve their resume based on what
-you learned from the given link.
+\begin{flushleft}
+\begin{tabular}{l l}
+Name: \rule{3.2in}{.01cm}  & {}%Table number: \rule{1in}{.01cm}\\
+\end{tabular}
+\end{flushleft}
 
 %----------------------------------------------------------------------------------------
-%	Deliverables
+%	Directions
 %----------------------------------------------------------------------------------------
 
-\section*{\textbf{Deliverables}}
+\section*{\textbf{Directions:}}
 
-Give me back the other person's resume I gave you with substantial corrections on it and put your name on the top of it.
+No calculator or notes may be used.  Read each question very carefully.  In order to receive full credit, you must:
+\begin{enumerate}
+\item Show legible and logical (relevant) justification which supports your final answer.
+\item Use complete and correct mathematical notation.
+\item Include proper units, if necessary.
+\item Give exact numerical values whenever possible.
+\item Follow the directions given for the problem.
+\end{enumerate}
+\vspace{.1in}
 
-%----------------------------------------------------------------------------------------
-%	Additional Information (Optional)
-%----------------------------------------------------------------------------------------
+\newpage
 
-\section*{\textbf{Additional Information}}
+\begin{enumerate}
+\item (2 points) Find the area (if the area is finite) between the curve $f(x)=\frac{1}{\cos^2 x}$ and the $x$-axis for $0 \le x \le \pi$.\\
 
-Start from here:\\
-\url{http://rockportinstitute.com/resumes/}
+\newpage
+
+
+\item (4 points) Set up, but do \textbf{NOT} evaluate or simplify the integral(s) that give the surface obtained by rotating 
+\begin{enumerate}
+\item \begin{large}$y=\sqrt{2+5e^{2x}}$\end{large} where $0 \le x \le 2$ about the $x$-axis.
+\vspace{1.75in}
+\item \begin{large}$x=5 \ln(y) + y$\end{large} where $2 \le y \le e^2$ about the $x$-axis.
+\vspace{1.75in}
+\item \begin{large}$y=\arcsin(2x)$\end{large} where $0 \le x \le \frac{1}{3}$ about the $y$-axis.
+\vspace{1.75in}
+\item \begin{large}$x=y^4-y$\end{large} where $0 \le y \le 1$ about the $x$-axis.
+\end{enumerate}
+
+\newpage
+\item (4 points) Find the exact length of the curve.
+\begin{enumerate}
+\item \begin{large}$y=\ln (\sec x)$\end{large} where $0 \le x \le \frac{\pi}{4}$
+\vspace{3.5in}
+\item \begin{large}$y=\frac{1}{4}x^2-\frac{1}{2} \ln x$\end{large} where $1 \le x \le 2$
+\end{enumerate}
+
+\newpage
+
+\end{enumerate}
 
 %----------------------------------------------------------------------------------------
 
