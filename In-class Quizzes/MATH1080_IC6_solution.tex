@@ -1,0 +1,196 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% In-class Quiz #4 Template
+% LaTeX Template
+% By: Ryan Grove
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+%\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\cfoot{\thepage\ of \pageref{LastPage}}
+
+\usepackage{graphicx}
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{Ryan Grove, Clemson University, MATH1080 - 9} \\ [25pt] % Your name, university, class
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge In-class Quiz \#6 \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Date:} % The due date
+
+\date{\normalsize February 12, 2016} % A custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+\begin{flushleft}
+\begin{tabular}{l l}
+Name: \rule{3.2in}{.01cm}  & {}%Table number: \rule{1in}{.01cm}\\
+\end{tabular}
+\end{flushleft}
+
+%----------------------------------------------------------------------------------------
+%	Directions
+%----------------------------------------------------------------------------------------
+
+\section*{\textbf{Directions:}}
+
+No calculator or notes may be used.  Read each question very carefully.  In order to receive full credit, you must:
+\begin{enumerate}
+\item Show legible and logical (relevant) justification which supports your final answer.
+\item Use complete and correct mathematical notation.
+\item Include proper units, if necessary.
+\item Give exact numerical values whenever possible.
+\item Follow the directions given for the problem.
+\end{enumerate}
+\vspace{.1in}
+
+\newpage
+
+\begin{enumerate}
+\item (3 points) Find the partial fraction decomposition of the rational expression.  Be sure to set up the entire general system of equations needed to find the undetermined coefficients, and then solve this system of equations.\\
+\begin{equation*}
+\frac{3x^2+1}{(x^2-2x+1)(x^2+1)}
+\end{equation*}
+\noindent\textbf{Solution:}\\
+Apply Partial Fraction Decomposition to the rational expression:
+\begin{eqnarray*}
+\frac{3x^2+1}{(x^2-2x+1)(x^2+1)}&=&\frac{A}{x-1}+\frac{B}{(x-1)^2}+\frac{Cx+D}{x^2+1} \\
+&=&\frac{A(x-1)(x^2+1)+B(x^2+1)+(Cx+D)(x-1)^2}{(x-1)^2(x^2+1)}
+\end{eqnarray*}
+Equate numerators:
+\begin{equation*}
+3x^2+1=A(x-1)(x^2+1)+B(x^2+1)+(Cx+D)(x-1)^2
+\end{equation*}
+To solve for A,B, and C we need to equate coefficients and give the general system of equations:
+\begin{equation*}
+0x^3+3x^2+0x^1+1=
+(A+c)x^3+(A+B-2C+D)x^2+(A+B-2D)x+(-A+B+D)
+\end{equation*}
+Therefore our system is:
+\[ \begin{array}{cccccc}
+Ax^3 & +0x^2 & +Cx & +0 &=& 0\\
+-Ax^3 & +Bx^2 & -2Cx & +D &=& 3 \\
+Ax^3 & +0x^2 & +Cx & -2D &=& 0\\
+-Ax^3 & +Bx^2 & +0x & +D &=& 1 \end{array} \]  
+Solving the above yields:
+$A=1,B=2,C=-1,D=0$.
+Therefore,
+\begin{equation*}
+\frac{3x^2+1}{(x^2-2x+1)(x^2+1)}=\frac{1}{x-1}+\frac{2}{(x-1)^2}-\frac{x}{x^2+1}
+\end{equation*}
+
+\newpage
+
+\item (2 points) Write out the form of the partial fraction decomposition of the function.  Do \textbf{NOT} determine the numerical values of the coefficients. 
+\begin{enumerate}
+\item \begin{large}$\frac{1+6x}{(4x-3)(2x+5)}$\end{large}\\
+
+\noindent\textbf{Solution:}\\
+\begin{large}$\frac{1+6x}{(4x-3)(2x+5)}=\frac{A}{4x-3}+\frac{B}{2x+5}$\end{large}\\
+\vspace{.25in}
+\item \begin{large}$\frac{x^4+1}{x^5+4x^3}$\end{large}\\
+
+\noindent\textbf{Solution:}\\
+$\frac{x^4+1}{x^5+4x^3}=\frac{A}{x}+\frac{B}{x^2}+\frac{C}{x^3}+\frac{Dx+E}{x^2+4}$\\
+\end{enumerate}
+\vspace{.25in}
+
+\item (2 points) Determine whether each integral is convergent or divergent.  Evaluate those that are convergent.
+\begin{enumerate}
+\item \begin{large}$\int_0^\infty \frac{x^2}{(\sqrt{1+x^3})} \text { } dx$\end{large}\\
+
+\noindent\textbf{Solution:}\\
+\begin{eqnarray*}
+\int_0^\infty \frac{x^2}{(\sqrt{1+x^3})} \text { } dx&=& \lim_{t \rightarrow \infty} \int_0^t \frac{x^2}{(\sqrt{1+x^3})}\text { } dx\\
+&=& \lim_{t \rightarrow \infty} \left[ \frac{2}{3} \sqrt{1+x^3} \right]_0^t \\
+&=& \lim_{t \rightarrow \infty} \left(\frac{2}{3} \sqrt{1+t^3} -\frac{2}{3} \right) \\
+&=& \infty
+\end{eqnarray*}
+Therefore,  \begin{large}$\int_0^\infty \frac{x^2}{(\sqrt{1+x^3})} \text { } dx$\end{large} is divergent.
+
+\item \begin{large}$\int_1^\infty \frac{1}{x^2+x}\text { } dx$\end{large}\\
+
+\noindent\textbf{Solution:}\\
+\begin{eqnarray*}
+\int_1^\infty \frac{1}{x^2+x}\text { } dx &=& \lim_{t \rightarrow \infty} \int_1^t \frac{1}{x^2+x}\text { } dx\\
+&=& \lim_{t \rightarrow \infty} \int_1^t \left(\frac{1}{x} - \frac{1}{1+x}\right)\text { } dx \\
+&=& \lim_{t \rightarrow \infty} \left[ \ln | \frac{x}{x+1} | \right]_1^t \\
+&=& \lim_{t \rightarrow \infty} \left( \ln \frac{t}{t+1} - \ln \frac{1}{2} \right) \\
+&=& \ln 2
+\end{eqnarray*}
+
+\end{enumerate}
+Therefore, \begin{large}$\int_1^\infty \frac{1}{x^2+x}\text { } dx$\end{large} converges.
+
+
+\item (3 points) Use the following rules to approximate $\int_1^4 \sqrt{\ln x} \text{ } dx$ with $n=6$.  You do \textbf{NOT} have to simplify using a calculator.\\
+\begin{enumerate}
+\item Trapezoid Rule\\
+\noindent\textbf{Solution:}\\ Note $\Delta x = \frac{4-1}{6}=\frac{1}{2}$\\
+\begin{equation*}
+T_6=\frac{1}{4}[f(1)+2f(1.5)+2f(2)+2f(2.5)+2f(3)+2f(3.5)+f(4)]
+\end{equation*}
+
+\vspace{.5in}
+\item Midpoit Rule\\
+\noindent\textbf{Solution:}\\
+\begin{equation*}
+M_6=\frac{1}{2}[[f(1.25)+f(1.75)+f(2.25)+f(2.75)+f(3.25)+f(3.75)]]
+\end{equation*}
+
+\vspace{.5in}
+\item Simpson's Rule\\
+\noindent\textbf{Solution:}\\
+\begin{equation*}
+S_6=\frac{1}{6}[f(1)+4f(1.5)+2f(2)+4f(2.5)+2f(3)+4f(3.5)+f(4)]
+\end{equation*}
+
+\end{enumerate}
+
+\end{enumerate}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
