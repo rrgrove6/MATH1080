@@ -1,0 +1,182 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% In-class Quiz Template
+% LaTeX Template
+% By: Ryan Grove
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+%\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\cfoot{\thepage\ of \pageref{LastPage}}
+
+\usepackage{graphicx}
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{Ryan Grove, Clemson University, MATH1080 - 9} \\ [25pt] % Your name, university, class
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge In-class Quiz \#7 \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Date:} % The due date
+
+\date{\normalsize February 19, 2016} % A custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+\begin{flushleft}
+\begin{tabular}{l l}
+Name: \rule{3.2in}{.01cm}  & {}%Table number: \rule{1in}{.01cm}\\
+\end{tabular}
+\end{flushleft}
+
+%----------------------------------------------------------------------------------------
+%	Directions
+%----------------------------------------------------------------------------------------
+
+\section*{\textbf{Directions:}}
+
+No calculator or notes may be used.  Read each question very carefully.  In order to receive full credit, you must:
+\begin{enumerate}
+\item Show legible and logical (relevant) justification which supports your final answer.
+\item Use complete and correct mathematical notation.
+\item Include proper units, if necessary.
+\item Give exact numerical values whenever possible.
+\item Follow the directions given for the problem.
+\end{enumerate}
+\vspace{.1in}
+
+\newpage
+
+\begin{enumerate}
+\item (2 points) Find the area (if the area is finite) between the curve $f(x)=\frac{1}{\cos^2 x}$ and the $x$-axis for $0 \le x \le \pi$.\\
+
+\noindent\textbf{Solution:}\\
+The function $f(x)=\frac{1}{\cos^2 x}$ is not defined at $x=\frac{\pi}{2}$. Thus an improper integral is required. \\
+
+\begin{eqnarray*}
+A&=& \int_0^\pi  \frac{1}{\cos^2 x} \text{ } dx \\
+&=& \int_0^\pi  \sec^2 x \text{ } dx \\
+&=& \int_0^{\pi/2}  \sec^2 x \text{ } dx + \int_{\pi/2}^\pi  \sec^2 x \text{ } dx \\
+&=&\lim\limits_{b \rightarrow \pi/2^- } \int_0^{b}  \sec^2 x \text{ } dx + \lim\limits_{a \rightarrow \pi/2^+ } \int_{a}^\pi  \sec^2 x \text{ } dx\\
+&=&\lim\limits_{b \rightarrow \pi/2^- } \tan x|_0^{b}  + \lim\limits_{a \rightarrow \pi/2^+ } \tan x|_{a}^\pi \\
+&=& \infty
+\end{eqnarray*}
+
+\newpage
+
+
+\item (4 points) Set up, but do \textbf{NOT} evaluate or simplify the integral(s) that give the surface obtained by rotating 
+\begin{enumerate}
+\item \begin{large}$y=\sqrt{2+5e^{2x}}$\end{large} where $0 \le x \le 2$ about the $x$-axis. \\
+
+\noindent\textbf{Solution:}\\
+$\frac{dy}{dx}=\frac{1}{2}(2+5e^{2x})^{-1/2}10e^{2x}$ \\
+$S=\int_0^2 2 \pi \sqrt{2+5e^{2x}} \sqrt{1+\left(\frac{5e^{2x}}{\sqrt{2+5e^{2x}}}\right)^2}$
+
+\vspace{.5in}
+\item \begin{large}$x=5 \ln(y) + y$\end{large} where $2 \le y \le e^2$ about the $x$-axis.
+
+
+\noindent\textbf{Solution:}\\
+$\frac{dx}{dy}=\frac{5}{y}+1$ \\
+$S=\int_0^{e^2} 2 \pi y \sqrt{1+\left(\frac{5}{y}+1\right)^2}$
+\vspace{.5in}
+\item \begin{large}$y=\arcsin(2x)$\end{large} where $0 \le x \le \frac{1}{3}$ about the $y$-axis.
+
+\noindent\textbf{Solution:}\\
+$\frac{dy}{dx}=\frac{2}{\sqrt{1-4x^2}}$ \\
+$S=\int_0^{\pi/3} 2 \pi x \sqrt{1+\left(\frac{2}{\sqrt{1-4x^2}}\right)^2}$
+\vspace{.5in}
+\item \begin{large}$x=y^4-y$\end{large} where $0 \le y \le 1$ about the $x$-axis.
+
+\noindent\textbf{Solution:}\\
+$\frac{dx}{dy}=4y^3-1$ \\
+$S=\int_0^{e^2} 2 \pi (y^4-1) \sqrt{1+\left(4y^3-1\right)^2}$
+
+\end{enumerate}
+
+\newpage
+\item (4 points) Find the exact length of the curve.
+\begin{enumerate}
+\item \begin{large}$y=\ln (\sec x)$\end{large} where $0 \le x \le \frac{\pi}{4}$\\
+
+\noindent\textbf{Solution:}\\
+$\frac{dx}{dy}=\frac{\sec x \tan x}{\sec x} = \tan x$\\
+
+Therefore, $1+(dy/dx)^2 = 1 + \tan^2 x = \sec ^2 x$ \\
+
+So, 
+\begin{eqnarray*}
+L &=& \int_0^{\pi/4} \sqrt{ \sec ^2 x} \text{ } dx \\
+&=& \int_0^{\pi/4} \sec x \text{ } dx  \\
+&=& \left[ \ln (\sec x + \tan x) \right]_0^{\pi/4}  \\
+&=& \ln (\sqrt{2} + 1)- \ln (1+0)  \\
+&=& \ln (\sqrt{2} + 1)
+\end{eqnarray*}
+
+\vspace{.25in}
+\item \begin{large}$y=\frac{1}{4}x^2-\frac{1}{2} \ln x$\end{large} where $1 \le x \le 2$\\
+
+\noindent\textbf{Solution:}\\
+$\frac{dx}{dy}=\frac{1}{2}x^2-\frac{1}{2x}$ \\
+
+Therefore, $1+(dy/dx)^2 = 1 + \left( \frac{1}{2}x^2-\frac{1}{2x} \right)^2= \left(\frac{1}{2}x + \frac{1}{2x}\right)^2$ \\
+
+So, 
+\begin{eqnarray*}
+L &=& \int_1^{2} \left(\frac{1}{2}x + \frac{1}{2x}\right) \text{ } dx \\
+&=&  \left[\frac{1}{4}x^2 + \frac{1}{2} \ln x\right]_1^2  \\
+&=& \left( 1 + \frac{1}{2} \ln 2 \right)   - \left( \frac{1}{4} + 0 \right)    \\
+&=&  \frac{3}{4} + \frac{1}{2} \ln 2  
+\end{eqnarray*}
+
+\end{enumerate}
+
+\newpage
+
+\end{enumerate}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
