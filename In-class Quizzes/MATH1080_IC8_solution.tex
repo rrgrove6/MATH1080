@@ -52,13 +52,13 @@
 \normalfont \normalsize 
 \textsc{Ryan Grove, Clemson University, MATH1080 - 9} \\ [25pt] % Your name, university, class
 \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-\huge In-class Quiz \#7 \\ % The assignment title
+\huge In-class Quiz \#8 \\ % The assignment title
 \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
 \author{Date:} % The due date
 
-\date{\normalsize February 19, 2016} % A custom date
+\date{\normalsize February 26, 2016} % A custom date
 
 \begin{document}
 
@@ -89,87 +89,99 @@ No calculator or notes may be used.  Read each question very carefully.  In orde
 \newpage
 
 \begin{enumerate}
-\item (2 points) Find the area (if the area is finite) between the curve $f(x)=\frac{1}{\cos^2 x}$ and the $x$-axis for $0 \le x \le \pi$.\\
+\item (2 points) Find the centroid of the region bounded by $y= \sin x$, $y= \cos x$, $x = 0$, $x = \frac{\pi}{4}$. \\
 
 \noindent\textbf{Solution:}\\
-The function $f(x)=\frac{1}{\cos^2 x}$ is not defined at $x=\frac{\pi}{2}$. Thus an improper integral is required. \\
-
 \begin{eqnarray*}
-A&=& \int_0^\pi  \frac{1}{\cos^2 x} \text{ } dx \\
-&=& \int_0^\pi  \sec^2 x \text{ } dx \\
-&=& \int_0^{\pi/2}  \sec^2 x \text{ } dx + \int_{\pi/2}^\pi  \sec^2 x \text{ } dx \\
-&=&\lim\limits_{b \rightarrow \pi/2^- } \int_0^{b}  \sec^2 x \text{ } dx + \lim\limits_{a \rightarrow \pi/2^+ } \int_{a}^\pi  \sec^2 x \text{ } dx\\
-&=&\lim\limits_{b \rightarrow \pi/2^- } \tan x|_0^{b}  + \lim\limits_{a \rightarrow \pi/2^+ } \tan x|_{a}^\pi \\
-&=& \boxed{\infty}
+A &=& \int_0^{\pi/4} \left( \cos x - \sin x \right) \text{ } dx \\
+&=& \left[ \sin x + \cos x \right]0^{\pi/4} \\
+&=& \sqrt{2}-1
 \end{eqnarray*}
 
+\begin{eqnarray*}
+\bar{x} &=& A^{-1}\int_0^{\pi/4} x \left( \cos x - \sin x \right) \text{ } dx \\
+&=& A^{-1} \left[ x \left( \sin x + \cos x \right) + \cos x - \sin x \right]0^{\pi/4} \\
+&=& A^{-1} \left( \frac{\pi}{4} \sqrt{2} -1\right) \\
+&=& \frac{ \left( \frac{\pi}{4} \sqrt{2} -1\right)}{\sqrt{2}-1}
+\end{eqnarray*}
+
+\begin{eqnarray*}
+\bar{y} &=& A^{-1} \int_0^{\pi/4} \frac{1}{2} \left( \cos ^2 x - \sin ^2 x \right) \text{ } dx \\
+&=& \frac{1}{2A} \int_0^{\pi/4} \cos(2x) \text{ } dx  \\
+&=& \frac{1}{4A} \left[ \right]_0^{\pi/4} \\
+&=& \frac{1}{4A}\\
+&=& \frac{1}{4(\sqrt{2}-1)} \\
+\end{eqnarray*}
+
+Thus, the centroid is \begin{large}$\boxed{(\bar{x},\bar{y})=\left(\frac{ \left( \frac{\pi}{4} \sqrt{2} -1\right)}{\sqrt{2}-1} ,\frac{1}{4(\sqrt{2}-1)}\right)}$\end{large}
 \newpage
 
 
-\item (4 points) Set up, but do \textbf{NOT} evaluate or simplify the integral(s) that give the surface obtained by rotating 
+\item (6 points) Determine if the series is \textbf{convergent} or \textbf{divergent}.  If it is convergent, find its sum.
 \begin{enumerate}
-\item \begin{large}$y=\sqrt{2+5e^{2x}}$\end{large} where $0 \le x \le 2$ about the $x$-axis. \\
+\item \begin{large}$\sum\limits_{n=1}^\infty \left( \frac{e}{\pi} \right)^n$\end{large}
 
 \noindent\textbf{Solution:}\\
-$\frac{dy}{dx}=\frac{1}{2}(2+5e^{2x})^{-1/2}10e^{2x}$ \\
-$\boxed{S=\int_0^2 2 \pi \sqrt{2+5e^{2x}} \sqrt{1+\left(\frac{5e^{2x}}{\sqrt{2+5e^{2x}}}\right)^2}\text{  }dx}$
+$\sum\limits_{n=1}^\infty \left( \frac{e}{\pi} \right)^n=\frac{e}{\pi} + \left( \frac{e}{\pi} \right)^2 + \left( \frac{e}{\pi} \right)^3 + \cdots$
+
+This is a convergent geometric series where $r=\frac{e}{\pi}$ and $|\frac{e}{\pi}| \le 1$, therefore the sum of the series is 
+
+\begin{eqnarray*}
+S &=& \frac{a}{1-r} \\
+&=& \frac{\frac{e}{\pi}}{1-\frac{e}{\pi}} \\
+&=& \frac{e}{\pi} \frac{\pi}{\pi-e} \\
+&=& \frac{e}{e-\pi} 
+\end{eqnarray*}
+
+Therefore,  \begin{large}$ \boxed{\sum\limits_{n=1}^\infty \left( \frac{e}{\pi} \right)^n =  \frac{e}{e-\pi}} $\end{large}
 
 \vspace{.5in}
-\item \begin{large}$x=5 \ln(y) + y$\end{large} where $2 \le y \le e^2$ about the $x$-axis.
-
-
-\noindent\textbf{Solution:}\\
-$\frac{dx}{dy}=\frac{5}{y}+1$ \\
-$\boxed{S=\int_2^{e^2} 2 \pi y \sqrt{1+\left(\frac{5}{y}+1\right)^2}\text{  }dy}$
-\vspace{.5in}
-\item \begin{large}$y=\arcsin(2x)$\end{large} where $0 \le x \le \frac{1}{3}$ about the $y$-axis.
+\item \begin{large}$\sum\limits_{n=1}^\infty \ln \frac{n+1}{n}$\end{large}
 
 \noindent\textbf{Solution:}\\
-$\frac{dy}{dx}=\frac{2}{\sqrt{1-4x^2}}$ \\
-$\boxed{S=\int_0^{1/3} 2 \pi x \sqrt{1+\left(\frac{2}{\sqrt{1-4x^2}}\right)^2}\text{  }dx}$
-\vspace{.5in}
-\item \begin{large}$x=y^4-y$\end{large} where $0 \le y \le 1$ about the $x$-axis.
+Using logarithmic properties, \begin{large}$\sum\limits_{n=1}^\infty \ln \frac{n+1}{n}$ = $\sum\limits_{n=1}^\infty \left( \ln (n+1)- \ln n \right)$\end{large}.
+\begin{eqnarray*}
+S_1 &=& \ln 2 - 0 \\
+S_2 &=& (\ln 2 - 0) + (\ln 3 - \ln 2)\\
+S_3 &=& (\ln 2 - 0) + (\ln 3 - \ln 2) + (\ln 4 - \ln 3)\\
+\cdots &\cdot & \cdots \\
+S_n &=& (\ln 2 - 0) + (\ln 3 - \ln 2) + (\ln 4 - \ln 3) + \cdots + (\ln n - \ln (n-1)) + (\ln (n+1) - \ln n) = \ln (n+1)
+\end{eqnarray*}
+Thus $\lim\limits_{n \rightarrow \infty} S_n = \lim\limits_{n \rightarrow \infty} \ln (n+1) = \infty $
+
+The partial sequence diverges.  Thus, the telescoping series $\boxed{ \text{diverges}}$.
+\newpage 
+
+
+\item \begin{large}$\sum\limits_{n=1}^\infty \left[ \left( \frac{e}{\pi} \right)^n + \ln \frac{n+1}{n} \right]$\end{large}
 
 \noindent\textbf{Solution:}\\
-$\frac{dx}{dy}=4y^3-1$ \\
-$\boxed{S=\int_0^{1} 2 \pi (y^4-y) \sqrt{1+\left(4y^3-1\right)^2}\text{  }dy}$
+Since the series $\sum\limits_{n=1}^\infty \ln \frac{n+1}{n}$ diverges, the series $\sum\limits_{n=1}^\infty \left[ \left( \frac{e}{\pi} \right)^n + \ln \frac{n+1}{n} \right]$ $\boxed{ \text{diverges}}$.
 
 \end{enumerate}
 
-\newpage
-\item (4 points) Find the exact length of the curve.
+\vspace{.5in}
+\item (2 points) Let \begin{large}$a_n=\frac{n^2}{2n+1}-\frac{n^2}{2n-1}$\end{large}
 \begin{enumerate}
-\item \begin{large}$y=\ln (\sec x)$\end{large} where $0 \le x \le \frac{\pi}{4}$\\
+\item Determine if \{ $a_n$ \} converges (and to which value) or diverges.
 
 \noindent\textbf{Solution:}\\
-$\frac{dy}{dx}=\frac{\sec x \tan x}{\sec x} = \tan x$\\
-
-Therefore, $1+(dy/dx)^2 = 1 + \tan^2 x = \sec ^2 x$ \\
-
-So, 
 \begin{eqnarray*}
-L &=& \int_0^{\pi/4} \sqrt{ \sec ^2 x} \text{ } dx \\
-&=& \int_0^{\pi/4} \sec x \text{ } dx  \\
-&=& \left[ \ln (\sec x + \tan x) \right]_0^{\pi/4}  \\
-&=& \ln (\sqrt{2} + 1)- \ln (1+0)  \\
-&=& \boxed{\ln (\sqrt{2} + 1)}
+\lim\limits_{n \rightarrow 0} \left(\frac{n^2}{2n+1}-\frac{n^2}{2n-1}\right) &=& \lim\limits_{n \rightarrow \infty} \left(\frac{n^3-n^2-2n^3-n^2}{4n^2+1}\right)\\
+&=& \lim\limits_{n \rightarrow 0} \left(\frac{-2n^2}{4n^2+1}\right)\\
+&=& \lim\limits_{n \rightarrow 0} \left(\frac{-2}{4+\frac{1}{n^2}}\right)\\
+&=& - \frac{1}{2}
 \end{eqnarray*}
-
-\vspace{.25in}
-\item \begin{large}$y=\frac{1}{4}x^2-\frac{1}{2} \ln x$\end{large} where $1 \le x \le 2$\\
+The sequence converges to $\boxed{-\frac{1}{2}}$.
+\vspace{.5in}
+\item Determine if \begin{large}$\sum\limits_{n=1}^\infty a_n$\end{large} converges or diverges.
 
 \noindent\textbf{Solution:}\\
-$\frac{dy}{dx}=\frac{1}{2}x^2-\frac{1}{2x}$ \\
-
-Therefore, $1+(dy/dx)^2 = 1 + \left( \frac{1}{2}x^2-\frac{1}{2x} \right)^2= \left(\frac{1}{2}x + \frac{1}{2x}\right)^2$ \\
-
-So, 
 \begin{eqnarray*}
-L &=& \int_1^{2} \left(\frac{1}{2}x + \frac{1}{2x}\right) \text{ } dx \\
-&=&  \left[\frac{1}{4}x^2 + \frac{1}{2} \ln x\right]_1^2  \\
-&=& \left( 1 + \frac{1}{2} \ln 2 \right)   - \left( \frac{1}{4} + 0 \right)    \\
-&=&  \boxed{\frac{3}{4} + \frac{1}{2} \ln 2  }
+\lim\limits_{n \rightarrow 0} \left(\frac{n^2}{2n+1}-\frac{n^2}{2n-1}\right) &=& -\frac{1}{2} \\
+ &\ne & 0
 \end{eqnarray*}
+By the Divergence Test the series $\boxed{ \text{diverges}}$.
 
 \end{enumerate}
 
