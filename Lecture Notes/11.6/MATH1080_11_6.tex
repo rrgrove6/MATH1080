@@ -1,0 +1,458 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Class Notes Template
+% LaTeX Template
+% By: Ryan Grove
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+%\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\cfoot{\thepage\ of \pageref{LastPage}}
+
+\def\v{\hbox{$\mathbf v$}}
+\def\w{\hbox{$\mathbf w$}}
+\def\u{\hbox{$\mathbf u$}}
+\def\x{\hbox{$\textbf{x}$}}
+\def\z{\hbox{$\mathbf z$}}
+\def\a{\hbox{$\mathbf a$}}
+\def\b{\hbox{$\mathbf b$}}
+\def\L{\hbox{$\mathcal L$}}
+\def\C{\hbox{$\mathbb C$}}
+\def\B{\hbox{$\mathcal B$}}
+\def\R{\hbox{$\mathbb R$}}
+\def\X{\hbox{$\underline X$}}
+\def\Q{\hbox{$\mathbb Q$}}
+\def\R{\hbox{$\mathbb R$}}
+\def\N{\hbox{$\mathbb N$}}
+\def\C{\hbox{$\mathbb C$}}
+\def\0{\hbox{$\mathbf 0$}}
+\def\Y{\hbox{$\underline Y$}}
+\def\a{\hbox{$\mathbf a$}}
+\def\u{\hbox{$\mathbf u$}}
+\def\w{\hbox{$\mathbf w$}}
+\def\y{\hbox{$\mathbf y$}}
+\def\X{\hbox{$\underline X$}}
+\def\dd{\hbox{$\partial $}}
+\def\B{\hbox{$\mathcal B$}}
+\def\F{\hbox{$\mathcal F$}}
+\def\L{\hbox{$\mathcal L$}}
+\def\M{\hbox{$\mathcal M$}}
+\def\D{\hbox{$\mathscr {D}$}}
+\def\RR{\hbox{$\mathscr{R}$}}
+\def\I{\hbox{$\mathcal I$}}
+
+
+\usepackage{amssymb}
+%\theoremstyle{plain}
+\usepackage[margin = .75in]{geometry}
+\newtheorem{claim}{Claim}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{problem}[theorem]{Problem}
+%\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+%\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{remarks}[theorem]{Remarks}
+\newtheorem{example}{Example}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\bbf}{\textbf}
+\newcommand{\p}{\parallel}
+\newcommand{\sk}{\noalign{\smallskip}}
+\newcommand{\enter}{\vspace{5mm}}
+\newcommand{\senter}{\vspace{3mm}}
+\newcommand{\field}[1]{\mathbb{#1}}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{cancel}
+\usepackage{upgreek}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{setspace}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{enumerate}
+\usepackage{cases}
+\usepackage{mathrsfs}
+\usepackage{rotating}
+\usepackage{framed}
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{Ryan Grove, Clemson University, MATH1080 - 9} \\ [25pt] % Your name, university, class
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge Section 11.6: Absolute Convergence, Ratio and Root Test\\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Date:} % The due date
+
+\date{\normalsize March 21, 2016} % A custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+\begin{flushleft}
+\begin{tabular}{l l}
+Name: \rule{3.2in}{.01cm}  & {}%Table number: \rule{1in}{.01cm}\\
+\end{tabular}
+\end{flushleft}
+
+%----------------------------------------------------------------------------------------
+%	Lecture
+%----------------------------------------------------------------------------------------
+
+\section*{\textbf{Lecture:}}
+\vspace{8mm}
+
+\noindent{\Large\textbf{Absolute Convergence}}
+
+\enter
+
+\noindent Given any series $\ds\sum a_n$, we can consider the corresponding series
+
+\senter
+
+\begin{center}
+$\ds\sum_{n=1}^{\infty}|a_n|=|a_1|+|a_2|+|a_3|+\cdots$
+\end{center}
+
+\senter
+
+\noindent whose terms are the absolute value of the terms of the original series.
+
+\begin{framed}
+\noindent\underline{\textbf{Definition}}: A series $\ds\sum a_n$ is called \underline{\hphantom{aaabsolutelyaa}} \text{} \underline{\hphantom{aaconvergentaa}} if the series of absolute values $\ds\sum|a_n|$ is convergent.
+\end{framed}
+
+\enter
+
+\noindent Notice that if $\ds\sum a_n$ is a series with positive terms, then $|a_n|=a_n$ and so absolute convergence is the same as convergence in this case.
+
+\begin{example}
+The series
+
+\begin{center}
+$\ds\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n^2}=1-\frac{1}{2^2}+\frac{1}{3^2}-\frac{1}{4^2}+\cdots$
+\end{center}
+
+\senter
+
+\noindent is absolutely convergent because
+
+\begin{center}
+$\ds\sum_{n=1}^{\infty}\left|\frac{(-1)^{n-1}}{n^2}\right|=\sum_{n=1}^{\infty}\frac{1}{n^2}$
+\end{center}
+
+\senter
+
+\noindent is a convergent $p$-series ($p=2>1$).
+\end{example}
+
+\begin{example}
+We know that the alternating harmonic series $\ds\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$ is convergent (11.5 Ex. 1), but is NOT absolutely convergent because the corresponding series of absolute values is
+
+\senter
+
+\begin{center}
+$\ds\sum_{n=1}^{\infty}\left|\frac{(-1)^{n-1}}{n}\right|=\sum_{n=1}^{\infty}\frac{1}{n}$,
+\end{center}
+
+\senter
+
+\noindent which is the harmonic series ($p$-series with $p=1$) and is therefore divergent.
+\end{example}
+
+\begin{framed}
+\noindent\underline{\textbf{Definition}}: A series $\ds\sum a_n$ is called \underline{\hphantom{aaconditionallyaa}} \text{} \underline{\hphantom{aaconvergentaa}} if it is convergent but not absolutely convergent.
+\end{framed}
+
+\enter
+
+\noindent Example 2 shows that the \emph{alternating harmonic} series is conditionally convergent. Thus, it is possible for a series to be convergent but not absolutely convergent. However, the next theorem shows that absolute convergence implies convergence.
+
+\newpage
+
+\begin{framed}
+\noindent\underline{\textbf{Theorem}}: If a series $\ds\sum a_n$ is absolutely convergent, then it is convergent.
+\end{framed}
+
+\begin{proof}
+Observe that the inequality
+
+\begin{center}
+$0\leq a_n+|a_n|\leq2|a_n|$
+\end{center}
+
+\senter
+
+\noindent is true because $|a_n|$ is either $a_n$ or $-a_n$. If $\sum a_n$ is absolutely convergent, then $\sum|a_n|$ is convergent, so $\sum2|a_n|$ is convergent. Therefore, by the Comparison Test, $\sum(a_n+|a_n|)$ is also convergent. Then,
+
+\senter
+
+\begin{center}
+$\ds\sum a_n=\sum (a_n+|a_n|)-\sum|a_n|$
+\end{center}
+
+\senter
+
+\noindent is the difference of two convergent series and is therefore convergent.
+\end{proof}
+
+\begin{example}
+Determine whether the series
+
+\senter
+
+\begin{center}
+$\ds\sum_{n=1}^{\infty}\frac{\cos n}{n^2}=\frac{\cos1}{1^2}+\frac{\cos2}{2^2}+\frac{\cos3}{3^2}+\cdots$
+\end{center}
+
+\senter
+
+\noindent is convergent or divergent.
+\end{example}
+
+\senter
+
+\noindent\textbf{SOLUTION}: This series has both positive and negative terms, but it is NOT alternating. (The first term is positive, the next three are negative, and the following three are positive. The signs change irregularly.)
+
+\newpage
+
+\noindent{\Large\textbf{Ratio Test}}
+
+\enter
+
+\noindent The following test is very useful in determining whether a given series is absolutely convergent.
+
+\begin{framed}
+\noindent\underline{\textbf{The Ratio Test}}:
+
+\senter
+
+\begin{enumerate}[(i)]
+
+\item If $\ds\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L<1$, then the series $\ds\sum_{n=1}^{\infty}a_n$ is absolutely convergent (and therefore convergent).
+
+\enter
+
+\item If $\ds\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L>1$ or  $\ds\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=\infty$, then the series $\ds\sum_{n=1}^{\infty}a_n$ is divergent.
+
+\enter
+
+\item If $\ds\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=1$, the Ratio Test is inconclusive; that is, no conclusion can be drawn about the convergence or divergence of $\ds\sum a_n$.
+
+\end{enumerate}
+\end{framed}
+
+\enter
+
+\noindent\underline{\textbf{*NOTE}}: Part (iii) of the Ratio Test says that if $\ds\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=1$, the test gives no information. For instance, for the convergent series $\ds\sum\frac{1}{n^2}$, we have
+
+\senter
+
+\begin{center}
+$\ds\left|\frac{a_{n+1}}{a_n}\right|=\frac{\ds\frac{1}{(n+1)^2}}{\ds\frac{1}{n^2}}=\frac{n^2}{(n+1)^2}=\frac{1}{\ds\left(1+\frac{1}{n}\right)^2}\to1$ \quad as $n\to\infty$,
+\end{center}
+
+\senter
+
+\noindent but similarly for the divergent series $\ds\sum\frac{1}{n}$, we have
+
+\senter
+
+\begin{center}
+$\ds\left|\frac{a_{n+1}}{a_n}\right|=\frac{\ds\frac{1}{n+1}}{\ds\frac{1}{n}}=\frac{n}{n+1}=\frac{1}{1+\ds\frac{1}{n}}\to1$ \quad $n\to\infty$.
+\end{center}
+
+\senter
+
+\noindent Therefore, if $\ds\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=1$, the series $\ds\sum a_n$ might converge or might diverge! In this case the Ratio Test fails, and we must use some other test.
+
+\newpage
+
+\begin{example}
+Test the series $\ds\sum_{n=1}^{\infty}(-1)^n\frac{n^3}{3^n}$ for absolute convergence.
+\end{example}
+
+\vfill
+
+\begin{example}
+Test the convergence of the series $\ds\sum_{n=1}^{\infty}\frac{n^n}{n!}$.
+\end{example}
+
+\vfill
+
+\noindent\underline{\textbf{*NOTE}}: Although the Ratio Test works in Example 5, an easier method is to use the Test for Divergence. Since
+
+\begin{center}
+$a_n=\ds\frac{n^n}{n!}=\frac{n\cdot n\cdot n\cdots n}{1\cdot2\cdot3\cdots n}\geq n$
+\end{center}
+
+\enter
+
+\noindent it follows that $a_n$ does not approach 0 as $n\to\infty$. Therefore, the given series is divergent by the Test for Divergence.
+
+\newpage
+
+\noindent{\Large\textbf{The Root Test}}
+
+\enter
+
+\noindent The following test is convenient to apply when $n$-th powers occur.
+
+\begin{framed}
+\noindent\underline{\textbf{The Root Test}}:
+
+\senter
+
+\begin{enumerate}[(i)]
+
+\item If $\ds\lim_{n\to\infty}\sqrt[n]{|a_n|}=L<1$, then the series $\ds\sum_{n=1}^{\infty}a_n$ is absolutely convergent (and therefore convergent).
+
+\enter
+
+\item If $\ds\lim_{n\to\infty}\sqrt[n]{|a_n|}=L>1$ or $\ds\lim_{n\to\infty}\sqrt[n]{|a_n|}=\infty$, then the series $\ds\sum_{n=1}^{\infty}a_n$ is divergent.
+
+\enter
+
+\item If $\ds\lim_{n\to\infty}\sqrt[n]{|a_n|}=1$, then the Root Test is inconclusive.
+
+\end{enumerate}
+\end{framed}
+
+\enter
+
+\noindent If $\ds\lim_{n\to\infty}\sqrt[n]{|a_n|}=1$, then Part (iii) of the Root Test says that the test gives no information. The series $\sum a_n$ could converge or diverge. (If $L=1$ in the Ratio Test, don't try the Root Test because $L$ will again be 1. And if $L=1$ in the Root Test, don't try the Ratio Test because it will fail too.)
+
+\senter
+
+\begin{example}
+Test the convergence of the series $\ds\sum_{n=1}^{\infty}\left(\frac{2n+3}{3n+2}\right)^n$.
+\end{example}
+
+\newpage
+
+\noindent{\Large\textbf{Rearrangements}}
+
+\enter
+
+\noindent The question of whether a given convergent series is absolutely convergent or conditionally convergent has a bearing on the question of whether infinite sums behave like finite sums. If we rearrange the order of the terms in a \emph{finite} sum, then of course the value of the sum remains unchanged. But this is not always the case for an \emph{infinite} series. By a \textbf{rearrangement} of an infinite series $\sum a_n$, we mean a series obtained by simply changing the order of the terms. For instance, a rearrangement of $\sum a_n$ could start as follows:
+
+\senter
+
+\begin{center}
+$a_1+a_2+a_5+a_3+a_4+a_{15}+a_6+a_7+a_{20}+\cdots$.
+\end{center}
+
+\senter
+
+\noindent It turns out that
+
+\senter
+
+\begin{center}
+\begin{tabular}{ l }
+if $\ds\sum a_n$ is an absolutely convergent series with sum $S$, \\
+\sk
+then any rearrangement of $\ds\sum a_n$ has the same sum $S$.
+\end{tabular}
+\end{center}
+
+\senter
+
+\noindent However, any conditionally convergent series can be rearranged to give a different sum. To illustrate this fact, let's consider the alternating harmonic series
+
+\begin{equation}
+1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\frac{1}{5}-\frac{1}{6}+\frac{1}{7}-\frac{1}{8}+\cdots=\ln2.
+\end{equation}
+
+\senter
+
+\noindent If we multiply this series by $\ds\frac{1}{2}$, then we get
+
+\begin{center}
+$\ds\frac{1}{2}-\frac{1}{4}+\frac{1}{6}-\frac{1}{8}+\cdots=\frac{1}{2}\ln2$.
+\end{center}
+
+\senter
+
+\noindent Inserting zeros between the terms of this series, we have
+
+\begin{equation}
+0+\frac{1}{2}+0-\frac{1}{4}+0+\frac{1}{6}+0-\frac{1}{8}+\cdots=\frac{1}{2}\ln2.
+\end{equation}
+
+\senter
+
+\noindent Now we add the series in Equations (1) and (2):
+
+\senter
+
+\begin{center}
+$\ds1+\frac{1}{3}-\frac{1}{2}+\frac{1}{5}+\frac{1}{7}-\frac{1}{4}+\cdots=\frac{3}{2}\ln2$.
+\end{center}
+
+\senter
+
+\noindent Notice that this resulting series contains the same terms as in Equation (1), but rearranged so that one negative terms occurs after each pair of positive terms. The sums of these series, however, are different. In fact, Riemann proved that
+
+\senter
+
+\begin{center}
+\begin{tabular}{ l }
+if $\ds\sum a_n$ is a conditionally convergent series and $r$ is any real number whatsoever, \\
+\sk
+then there is a rearrangement of $\ds\sum a_n$ that has a sume equal to $r$.
+\end{tabular}
+\end{center}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

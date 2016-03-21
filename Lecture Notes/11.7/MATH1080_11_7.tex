@@ -1,0 +1,222 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Class Notes Template
+% LaTeX Template
+% By: Ryan Grove
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+%\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\cfoot{\thepage\ of \pageref{LastPage}}
+
+\def\v{\hbox{$\mathbf v$}}
+\def\w{\hbox{$\mathbf w$}}
+\def\u{\hbox{$\mathbf u$}}
+\def\x{\hbox{$\textbf{x}$}}
+\def\z{\hbox{$\mathbf z$}}
+\def\a{\hbox{$\mathbf a$}}
+\def\b{\hbox{$\mathbf b$}}
+\def\L{\hbox{$\mathcal L$}}
+\def\C{\hbox{$\mathbb C$}}
+\def\B{\hbox{$\mathcal B$}}
+\def\R{\hbox{$\mathbb R$}}
+\def\X{\hbox{$\underline X$}}
+\def\Q{\hbox{$\mathbb Q$}}
+\def\R{\hbox{$\mathbb R$}}
+\def\N{\hbox{$\mathbb N$}}
+\def\C{\hbox{$\mathbb C$}}
+\def\0{\hbox{$\mathbf 0$}}
+\def\Y{\hbox{$\underline Y$}}
+\def\a{\hbox{$\mathbf a$}}
+\def\u{\hbox{$\mathbf u$}}
+\def\w{\hbox{$\mathbf w$}}
+\def\y{\hbox{$\mathbf y$}}
+\def\X{\hbox{$\underline X$}}
+\def\dd{\hbox{$\partial $}}
+\def\B{\hbox{$\mathcal B$}}
+\def\F{\hbox{$\mathcal F$}}
+\def\L{\hbox{$\mathcal L$}}
+\def\M{\hbox{$\mathcal M$}}
+\def\D{\hbox{$\mathscr {D}$}}
+\def\RR{\hbox{$\mathscr{R}$}}
+\def\I{\hbox{$\mathcal I$}}
+
+\usepackage{amssymb}
+%\theoremstyle{plain}
+\usepackage[margin = .75in]{geometry}
+\newtheorem{claim}{Claim}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{problem}[theorem]{Problem}
+%\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+%\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{remarks}[theorem]{Remarks}
+\newtheorem{example}[theorem]{Example}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\bbf}{\textbf}
+\newcommand{\p}{\parallel}
+\usepackage{color}
+\newcommand{\field}[1]{\mathbb{#1}}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{cancel}
+\usepackage{upgreek}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{setspace}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{enumerate}
+\usepackage{cases}
+\usepackage{mathrsfs}
+\usepackage{rotating}
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{Ryan Grove, Clemson University, MATH1080 - 9} \\ [25pt] % Your name, university, class
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge Section 11.7: Strategy for Testing Series\\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Date:} % The due date
+
+\date{\normalsize March 22, 2016} % A custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+\begin{flushleft}
+\begin{tabular}{l l}
+Name: \rule{3.2in}{.01cm}  & {}%Table number: \rule{1in}{.01cm}\\
+\end{tabular}
+\end{flushleft}
+
+%----------------------------------------------------------------------------------------
+%	Lecture
+%----------------------------------------------------------------------------------------
+
+\section*{\textbf{Lecture:}}
+\begin{enumerate}
+\item[1.] If the series is of the form $\ds\sum \ds\frac{1}{n^p}$, it is a $\mathbf{p-}$\textbf{series}, which we know to be convergent if $p>1$ and divergent if $p\leq 1$.\\
+\indent
+
+\item[2.] If the series has the form $\ds\sum a r^{n-1}$ or $\ds\sum a r^n$, it is a \textbf{geometric series}, which converges if $|r|<1$ and diverges if $|r|\geq 1$. Some preliminary algebraic manipulation may be required to bring the series into this form.\\
+\indent
+
+\item[3.] If the series has a form that is similar to a $p-$series or a geometric series, then one of the \textbf{comparison tests} should be considered. In particular, if $a_n$ is a rational function or an algebraic function of $n$ (involving roots of polynomials), then the series should be compared with a $p-$series. The value of $p$ should be chosen by keeping only the highest powers of $n$ in the numerator and denominator (and simplifying the ratio). The comparison tests apply only to series with positive terms, but if $\ds\sum a_n$ has some negative terms, then we can apply the Comparison Test to $\ds\sum |a_n|$ and test for absolute convergence (which implies convergence).\\
+\indent
+
+\item[4.] If you can see at a glance that $\ds\lim\neq 0$, then the \textbf{Test for Divergence} should be used.\\
+\indent
+
+\item[5.] If the series is of the form $\ds\sum (-1)^{n-1}b_n$ or $\ds\sum (-1)^n b_n$, then the \textbf{Alternating Series Test} is an obvious possibility.\\
+\indent
+
+\item[6.] Series that involve factorials or other products (including a constant raised to the $n^{\text{th}}$ power) are conveniently tested using the \textbf{Ratio Test}.\\
+\indent
+
+\item[7.] If $a_n$ is of the form $(b_n)^n$, then the \textbf{Root Test} may be useful.\\
+\indent
+
+\item[8.] If $a_n=f(n)$, where $\ds\int_1^\infty f(x) dx$ is easily evaluated, then the \textbf{Integral Test} is effective (assuming the hypotheses of this test are satisfied).\\
+\indent
+
+\end{enumerate}
+
+
+In the following examples we don't work out all the details but simply indicate which test should be used to test convergence/divergence.\\
+\indent
+
+\underline{Example 1}: $\ds\sum_{n=1}^\infty \ds\frac{n-1}{2n+1}$\\
+
+\vspace{0.9in}
+
+\underline{Example 2}: $\ds\sum_{n=1}^\infty \ds\frac{\ds\sqrt{n^3+1}}{3n^3 + 4n^2 + 2}$\\
+
+\vspace{1.5in}
+
+\underline{Example 3}: $\ds\sum_{n=1}^\infty ne^{-n^2}$\\
+
+\vspace{0.9in}
+
+\underline{Example 4}: $\ds\sum_{n=1}^\infty (-1)^n \ds\frac{n^3}{n^4+1}$\\
+
+\vspace{0.9in}
+
+\underline{Example 5}: $\ds\sum_{k=1}^\infty \ds\frac{2^k}{k!}$\\
+
+\vspace{0.9in}
+
+\underline{Example 6}: $\ds\sum_{n=1}^\infty \ds\frac{1}{2+3^n}$\\
+
+\vspace{1in}
+
+  
+  
+  
+  
+  
+  
+  
+
+
+  
+  
+  
+  
+  
+
+
+  
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
