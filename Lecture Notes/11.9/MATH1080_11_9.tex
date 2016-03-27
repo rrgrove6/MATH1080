@@ -1,0 +1,253 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Class Notes Template
+% LaTeX Template
+% By: Ryan Grove
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+%\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\cfoot{\thepage\ of \pageref{LastPage}}
+
+\def\v{\hbox{$\mathbf v$}}
+\def\w{\hbox{$\mathbf w$}}
+\def\u{\hbox{$\mathbf u$}}
+\def\x{\hbox{$\textbf{x}$}}
+\def\z{\hbox{$\mathbf z$}}
+\def\a{\hbox{$\mathbf a$}}
+\def\b{\hbox{$\mathbf b$}}
+\def\L{\hbox{$\mathcal L$}}
+\def\C{\hbox{$\mathbb C$}}
+\def\B{\hbox{$\mathcal B$}}
+\def\R{\hbox{$\mathbb R$}}
+\def\X{\hbox{$\underline X$}}
+\def\Q{\hbox{$\mathbb Q$}}
+\def\R{\hbox{$\mathbb R$}}
+\def\N{\hbox{$\mathbb N$}}
+\def\C{\hbox{$\mathbb C$}}
+\def\0{\hbox{$\mathbf 0$}}
+\def\Y{\hbox{$\underline Y$}}
+\def\a{\hbox{$\mathbf a$}}
+\def\u{\hbox{$\mathbf u$}}
+\def\w{\hbox{$\mathbf w$}}
+\def\y{\hbox{$\mathbf y$}}
+\def\X{\hbox{$\underline X$}}
+\def\dd{\hbox{$\partial $}}
+\def\B{\hbox{$\mathcal B$}}
+\def\F{\hbox{$\mathcal F$}}
+\def\L{\hbox{$\mathcal L$}}
+\def\M{\hbox{$\mathcal M$}}
+\def\D{\hbox{$\mathscr {D}$}}
+\def\RR{\hbox{$\mathscr{R}$}}
+\def\I{\hbox{$\mathcal I$}}
+
+\usepackage{amssymb}
+%\theoremstyle{plain}
+\usepackage[margin = .75in]{geometry}
+\newtheorem{claim}{Claim}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{problem}[theorem]{Problem}
+%\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+%\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{remarks}[theorem]{Remarks}
+\newtheorem{example}[theorem]{Example}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\bbf}{\textbf}
+\newcommand{\p}{\parallel}
+\usepackage{color}
+\newcommand{\field}[1]{\mathbb{#1}}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{cancel}
+\usepackage{upgreek}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{setspace}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{enumerate}
+\usepackage{cases}
+\usepackage{mathrsfs}
+\usepackage{rotating}
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{Ryan Grove, Clemson University, MATH1080 - 9} \\ [25pt] % Your name, university, class
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge Section 11.9: Representation of Functions as Power Series\\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Date:} % The due date
+
+\date{\normalsize March 28, 2016} % A custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+\begin{flushleft}
+\begin{tabular}{l l}
+Name: \rule{3.2in}{.01cm}  & {}%Table number: \rule{1in}{.01cm}\\
+\end{tabular}
+\end{flushleft}
+
+%----------------------------------------------------------------------------------------
+%	Lecture
+%----------------------------------------------------------------------------------------
+
+\section*{\textbf{Lecture:}}
+In this section we learn how to represent certain types of functions as sums of power series by manipulating \underline{\hspace{1.25in}} series or by \underline{\hspace{1.65in}} or \underline{\hspace{1.65in}} such a series. Why would we want to express a known function as a sum of infinitely many terms? We will see later that this strategy is useful for integrating functions that don't have elementary (i.e. obvious) antiderivatives, for solving differential equations, and for approximating functions by polynomials.\\
+\indent
+
+We start with an equation that we have seen before:\\
+\indent
+
+\fbox{
+  \parbox{\textwidth}{
+  \vspace{5pt} 
+  
+  \[[1] \hspace{1in} \ds\frac{1}{1-x} = 1 + x + xˆ2 + xˆ3 + \cdots = \ds\sum_{n=0}^\infty x^n \quad \quad |x|<1 \]
+  
+  }}
+  \indent\\
+  \indent
+  
+  This series is a geometric series with $a=1$ and $r=x$.\\
+  \indent
+  \newpage
+  \underline{Example 1}: Express $\ds\frac{1}{1+x^2}$ as the sum of a power series and find the interval of convergence.\\
+  \indent
+  
+\newpage
+  
+  \underline{Example 2}: Find a power series representation for $\ds\frac{1}{x+2}$\\
+  \indent
+  
+  \vspace{4in}
+  
+  \underline{Example 3}: Find a power series representation of $\ds\frac{x^3}{x+2}$
+  
+\newpage
+  
+  \section*{Differentiation and Integration of Power Series}
+  
+  The sum of a power series is a function $f(x)=\ds\sum_{n=0}^\infty c_n(x-a)^n$ whose domain is the interval of convergence of the series. We would like to be able to differentiate and integrate such functions, and the following theorem (which we won't prove) says that we can do so by differentiating or integrating each individual term in the series, just as we would for a polynomial. This is called \underline{\hspace{1in}}-\underline{\hspace{0.3in}}-\underline{\hspace{1in}} \textbf{differentiation and integration}.\\
+  \indent
+  
+\fbox{
+  \parbox{\textwidth}{
+  \vspace{5pt} \textbf{Theorem}: If the power series $\ds\sum c_n (x-a)^n$ has radius of convergence $R>0$, then the function $f$ defined by
+  \[f(x) = c_0 + c_1(x-a) + c_2(x-a) + \cdots = \ds\sum_{n=0}^\infty c_n(x-a)^n\]
+  is differentiable (and therefore continuous) on the interval $(a-R,a+R)$ and
+  \begin{enumerate}
+  \item[(i)] $f'(x) = c_1 + 2c_2(x-a) + 3c_3(x-a)^2 + \cdots = \ds\sum_{n=1}^\infty n c_n (x-a)^{n-1}$
+  \item[(ii)] $\ds\int f(x) dx = C + c_0(x-a) + c_1 \ds\frac{(x-a)^2}{2} + c_2 \ds\frac{(x-a)^3}{3} + \cdots$\\
+  \hspace{1in} $= C + \ds\sum_{n=0}^\infty c_n \ds\frac{(x-a)^n+1}{n+1}$\\
+  \end{enumerate}
+  
+  The radii of convergence of the power series in equations $(i)$ and $(ii)$ are both $R$.\\
+  
+  }}
+  \indent\\
+  \indent
+  
+  \textbf{NOTE 1}: Equations $(i)$ and $(ii)$ in Theorem 2 can be rewritten in the form:
+  \begin{enumerate}
+  \item[(iii)] $\ds\frac{d}{dx}\bigg[\ds\sum_{n=0}^\infty c_n (x-a)^n\bigg] = \ds\sum_{n=0}^\infty \ds\frac{d}{dx}[c_n (x-a)^n]$
+  \item[(iv)] $\ds\int \bigg[\ds\sum_{n=0}^\infty c_n (x-a)^n\bigg]dx = \ds\sum_{n=0}^\infty \ds\int c_n(x-a)^n dx$
+  \end{enumerate}
+  \indent
+  
+  We know that, for \underline{\hspace{1in}} sums, the derivative of a sum is the sum of the derivatives and the integral of a sum is the sum of the integrals. Equations $(iii)$ and $(iv)$ assert that the same is true for \underline{\hspace{1in}} sums, provided we are dealing with \underline{\hspace{1in}} \underline{\hspace{1in}}. (For other types of series of functions the situation is not as simple).\\
+  \indent
+  
+  \textbf{NOTE 2}: Although Theorem 2 says that the \underline{\hspace{1in}} of convergence remains the same when a power series is differentiated or integrated, this does not mean that the \underline{\hspace{1.25in}} of convergence remains the same. It may happen that the original series converges at an endpoint, whereas the differentiated series diverges there.\\
+  \indent
+  
+  \textbf{NOTE 3}: The idea of differentiating a power series term by term is the basis for a powerful method for solving differential equations.\\
+  \indent\\
+  \indent
+  \newpage
+  \underline{Example 5}: Express $\ds\frac{1}{(1-x)^2}$  as a power series by differentiating Equation 1 with $\ds\frac{1}{1-x}$. What is the radius of convergence?\\
+  \indent
+  
+  \vspace{3in}
+  
+  *According to Theorem above, the radius of convergence of the differentiated series is the same as\\
+  \indent
+  
+   the radius of convergence of the original series, namely, \underline{\hspace{1in}}.
+  
+  \newpage
+  
+  \underline{Example 6}: Find a power series representation for $\ln (1+x)$ and its radius of convergence.\\
+  \indent
+  
+  \vspace{4in}
+  
+  \underline{Example 7}: Find a power series representation for $f(x)=\tan^{-1}x$.\\
+  \indent
+  
+  \vspace{3in}
+  
+  \newpage
+  
+  \underline{Example 8}:
+  \begin{enumerate}
+  \item[(a)] Evaluate $\ds\int \ds\frac{1}{1+x^7} dx$ as a power series.
+  \item[(b)] Use part $(a)$ to approximate $\ds\int_0^{0.5} \ds\frac{1}{1+x^7} dx$ correct to within $10^{-7}$.
+  \end{enumerate}
+  \indent\\
+  \indent
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
