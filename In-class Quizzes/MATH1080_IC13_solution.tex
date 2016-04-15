@@ -52,13 +52,13 @@
 \normalfont \normalsize 
 \textsc{Ryan Grove, Clemson University, MATH1080 - 9} \\ [25pt] % Your name, university, class
 \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-\huge In-class Quiz \#12 \\ % The assignment title
+\huge In-class Quiz \#13 \\ % The assignment title
 \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
 \author{Date:} % The due date
 
-\date{\normalsize March 29, 2016} % A custom date
+\date{\normalsize April 1, 2016} % A custom date
 
 \begin{document}
 
@@ -89,67 +89,31 @@ No calculator or notes may be used.  Read each question very carefully.  In orde
 \newpage
 
 \begin{enumerate}
-\item (4 points) Consider the power series $\sum\limits_{n=1}^\infty \frac{(x-2)^n}{n5^n}$.
-\begin{enumerate}
-\item Determine the radius of convergence.\\
-\noindent\textbf{Solution:}\\
-Set up and simplify the ratio:
+\item (10 points) Let $f(x)=\ln (1+x)$.  The Mclaurin series for $f(x)$ is 
 \begin{equation*}
-| \frac{a_{n+1}}{a_n} | = | \frac{\frac{(x-2)^{n+1}}{(n+1)5^{n+1}}}{\frac{(x-2)^n}{n5^n}} | = | \frac{(x-2)^{n+1}}{(x-2)^n} \cdot \frac{n}{(n+1)} \cdot \frac{5^n}{5^{n+1}} | = |\frac{(x-2)}{5} \cdot \frac{n}{(n+1)}|
+\ln (1+x)= \sum\limits_{n=1}^\infty (-1)^{n+1} \frac{x^n}{n}
 \end{equation*}
-Evaluate the limit:
-\begin{equation*}
-\lim\limits_{n \rightarrow \infty}| \frac{a_{n+1}}{a_n} | =\lim\limits_{n \rightarrow \infty} |\frac{(x-2)}{5} \cdot \frac{n}{(n+1)}| = \frac{|x-2|}{5}  \lim\limits_{n \rightarrow \infty} \frac{n}{n+1} = \frac{|x-2|}{5} \cdot 1 =\frac{|x-2|}{5}
-\end{equation*}
-The power series converges when $\lim\limits_{n \rightarrow \infty} |\frac{a_{n+1}}{a_n} | < 1$, i.e. $\frac{|x-2|}{5} < 1$ or $|x-2|<5$. Thus, the radius of convergence for the power series is $\boxed{R=5}$. 
-
- \vspace{.5in}
-\item Determine the interval of convergence. \textbf{Hint:} Endpoints!\\
-\noindent\textbf{Solution:}\\
-Since the radius of convergence is $5$, we have that $|x-2|<5 \implies -5<x-2<5$ or $-3<x<7$. We must check for convergence at the endpoints of the interval.
-
-If $x=-3$, then $\sum\limits_{n=1}^\infty \frac{(-3-2)^n}{n5^n}=\sum\limits_{n=1}^\infty \frac{(-5)^n}{n5^n}=\sum\limits_{n=1}^\infty \frac{(-1)^n 5^n}{n5^n}=\sum\limits_{n=1}^\infty \frac{(-1)^n }{n}$ which is a convergent alternating harmonic series.
-
-If $x=7$, then $\sum\limits_{n=1}^\infty \frac{(7-2)^n}{n5^n}=\sum\limits_{n=1}^\infty \frac{(5)^n}{n5^n}=\sum\limits_{n=1}^\infty \frac{1 }{n}$, which is a divergent harmonic series.
-
-Thus, the interval of convergence for the power series is $\boxed{-3 \le x < 7}$.
-
-
-
-\end{enumerate}
-
-\newpage
-
-\item (6 points) Consider the series $\sum\limits_{n=1}^\infty \frac{(-1)^{n+1}}{n5^n}$.
 \begin{enumerate}
-\item Does the series converge absolutely?\\
+\item Using the Mclaurin series for $\ln (1+x)$, determine the Mclaurin series for $\ln (1+x^3)$.  Answers must be in closed form (Sigma notation).\\
 \noindent\textbf{Solution:}\\
-Looking at the series $\sum\limits_{n=1}^\infty |\frac{(-1)^{n+1}}{n5^n}|$, we find
+$\ln (1+x^3)= \sum\limits_{n=1}^\infty (-1)^{n+1}\frac{x^{3n}}{n}$
+
+\vspace{.5in}
+\item Using your answer for part $a$, find the power series representation for the general antiderivative of $\ln (1+x^3)$. Answers must be in closed form (Sigma notation).\\
+\noindent\textbf{Solution:}\\
 \begin{eqnarray*}
-\sum\limits_{n=1}^\infty |\frac{(-1)^{n+1}}{n5^n}| &=& \sum\limits_{n=1}^\infty \frac{1}{n5^n} 
+\int \ln (1+x^3) \text{ dx} &=&  \int \sum\limits_{n=1}^\infty (-1)^{n+1}\frac{x^{3n}}{n} \text{ dx} \\
+&=&   \sum\limits_{n=1}^\infty \int (-1)^{n+1}\frac{x^{3n}}{n} \text{ dx} \\
+&=&   \sum\limits_{n=1}^\infty  (-1)^{n+1} \int \frac{x^{3n}}{n} \text{ dx} \\
+&=&   \sum\limits_{n=1}^\infty  (-1)^{n+1} \frac{x^{3n+1}}{n(3n+1)} + c
 \end{eqnarray*}
-Using the ratio test, we find
-\begin{eqnarray*}
- \frac{1}{(n+1)5^{n+1}} \cdot \frac{n5^n}{1}  &=&  \frac{1}{(n+1)5^{n}\cdot 5} \cdot \frac{n5^n}{1}  \\
- &=&  \frac{1}{(n+1) \cdot 5} \cdot \frac{n}{1}  \\
-  &=&  \frac{1}{5} \cdot \frac{n}{n+1} \rightarrow  \frac{1}{5} \text{ as } n \rightarrow \infty
-\end{eqnarray*}
-Since $\frac{1}{5} < 1$,  $\sum\limits_{n=1}^\infty \frac{(-1)^{n+1}}{n5^n}$ converges absolutely.
 
- \vspace{.5in}
-\item Does the series converge conditionally?\\
+\vspace{.5in}
+\item Assume that the series you found in part $b$ converges for all $|x| < 1$. Use your answer in part $b$ to determine a series that represents $\int_0^{0.2} \ln (1+x^3) \text{ } dx$. Answers must be in closed form (Sigma notation).\\
 \noindent\textbf{Solution:}\\
-$\boxed{\text{No}}$, since it converges absolutely.
-
- \vspace{.5in}
-\item What are the fewest number of terms necessary to approximate the sum of the series with an error bound of no more than $0.01$?\\
-\noindent\textbf{Solution:}\\
-Note that since our series is alternating, we can just look at the first neglected term, i.e. look for the first $a_n$ that satisfies $|a_n|<0.01$.
-
-$|a_2|=  \frac{1}{2\cdot 5^2} = \frac{1}{50} > 0.01$
-
-$|a_3|=  \frac{1}{3\cdot 5^3} = \frac{1}{375}< 0.01$, therefore $\boxed{2}$ terms are needed.
-
+\begin{equation*}
+\sum\limits_{n=1}^\infty  (-1)^{n+1} \frac{(0.2)^{3n+1}}{n(3n+1)} 
+\end{equation*}
 
 \end{enumerate}
 

@@ -52,13 +52,13 @@
 \normalfont \normalsize 
 \textsc{Ryan Grove, Clemson University, MATH1080 - 9} \\ [25pt] % Your name, university, class
 \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-\huge In-class Quiz \#12 \\ % The assignment title
+\huge In-class Quiz \#16 \\ % The assignment title
 \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
 \author{Date:} % The due date
 
-\date{\normalsize March 29, 2016} % A custom date
+\date{\normalsize April 13, 2016} % A custom date
 
 \begin{document}
 
@@ -91,67 +91,66 @@ No calculator or notes may be used.  Read each question very carefully.  In orde
 \begin{enumerate}
 \item (4 points) Consider the power series $\sum\limits_{n=1}^\infty \frac{(x-2)^n}{n5^n}$.
 \begin{enumerate}
-\item Determine the radius of convergence.\\
-\noindent\textbf{Solution:}\\
-Set up and simplify the ratio:
-\begin{equation*}
-| \frac{a_{n+1}}{a_n} | = | \frac{\frac{(x-2)^{n+1}}{(n+1)5^{n+1}}}{\frac{(x-2)^n}{n5^n}} | = | \frac{(x-2)^{n+1}}{(x-2)^n} \cdot \frac{n}{(n+1)} \cdot \frac{5^n}{5^{n+1}} | = |\frac{(x-2)}{5} \cdot \frac{n}{(n+1)}|
-\end{equation*}
-Evaluate the limit:
-\begin{equation*}
-\lim\limits_{n \rightarrow \infty}| \frac{a_{n+1}}{a_n} | =\lim\limits_{n \rightarrow \infty} |\frac{(x-2)}{5} \cdot \frac{n}{(n+1)}| = \frac{|x-2|}{5}  \lim\limits_{n \rightarrow \infty} \frac{n}{n+1} = \frac{|x-2|}{5} \cdot 1 =\frac{|x-2|}{5}
-\end{equation*}
-The power series converges when $\lim\limits_{n \rightarrow \infty} |\frac{a_{n+1}}{a_n} | < 1$, i.e. $\frac{|x-2|}{5} < 1$ or $|x-2|<5$. Thus, the radius of convergence for the power series is $\boxed{R=5}$. 
+\item Determine the radius of convergence.
+ \vspace{3.5in}
+\item Determine the interval of convergence. \textbf{Hint:} Endpoints!
+\end{enumerate}
+\newpage
+\item (2 points) Use the test of your choice to determine whether 
+$\sum\limits_{n=1}^\infty \sin \left( \frac{1}{n} \right)$ is convergent or divergent.
 
- \vspace{.5in}
-\item Determine the interval of convergence. \textbf{Hint:} Endpoints!\\
-\noindent\textbf{Solution:}\\
-Since the radius of convergence is $5$, we have that $|x-2|<5 \implies -5<x-2<5$ or $-3<x<7$. We must check for convergence at the endpoints of the interval.
+\newpage
 
-If $x=-3$, then $\sum\limits_{n=1}^\infty \frac{(-3-2)^n}{n5^n}=\sum\limits_{n=1}^\infty \frac{(-5)^n}{n5^n}=\sum\limits_{n=1}^\infty \frac{(-1)^n 5^n}{n5^n}=\sum\limits_{n=1}^\infty \frac{(-1)^n }{n}$ which is a convergent alternating harmonic series.
+\item (6 points) Consider the series $\sum\limits_{n=1}^\infty \frac{1}{n^2}$.
+\begin{enumerate}
+\item Determine if the integral test can be applied to this series.
+\vspace{3.5in}
+\item If the integral test can be applied, use it to determine if the series converges or diverges.
+\newpage
+\item Approximate the sum of the series using the first three terms of the series. Use the Remainder Estimate for the integral test to bound (lower and upper) the error for this approximation.
+\end{enumerate}
 
-If $x=7$, then $\sum\limits_{n=1}^\infty \frac{(7-2)^n}{n5^n}=\sum\limits_{n=1}^\infty \frac{(5)^n}{n5^n}=\sum\limits_{n=1}^\infty \frac{1 }{n}$, which is a divergent harmonic series.
+\vspace{3.5in}
 
-Thus, the interval of convergence for the power series is $\boxed{-3 \le x < 7}$.
+\item (2 points) Use the test of your choice to determine whether 
+$\sum\limits_{n=1}^\infty (-1)^n \sin \left( \frac{\pi}{n} \right)$ is convergent or divergent.
 
+\newpage
 
+\item (2 points) Use the test of your choice to determine whether 
+$\sum\limits_{n=1}^\infty \frac{n!}{3^n n^2}$ is convergent or divergent.
 
+\newpage
+
+\item (2 points) Use the test of your choice to determine whether 
+$\sum\limits_{n=3}^\infty \cos (n \pi) \tan (\frac{\pi}{n})$ is convergent or divergent. \textbf{Hint:} Write out a few terms.
+
+\newpage
+
+\item (6 points) Consider the series $\sum\limits_{n=1}^\infty \frac{(-1)^{n+1}}{\sqrt{n}}$.
+\begin{enumerate}
+\item Does the series converge absolutely?
+ \vspace{2in}
+\item Does the series converge conditionally?
+ \vspace{3in}
+\item What are the fewest number of terms necessary to approximate the sum of the series with an error bound of no more than $0.01$?
 \end{enumerate}
 
 \newpage
 
-\item (6 points) Consider the series $\sum\limits_{n=1}^\infty \frac{(-1)^{n+1}}{n5^n}$.
+\item (6 points) Let $f(x)=\ln (1+x)$.  The Mclaurin series for $f(x)$ is 
+\begin{equation*}
+\ln (1+x)= \sum\limits_{n=1}^\infty (-1)^{n+1} \frac{x^n}{n}
+\end{equation*}
 \begin{enumerate}
-\item Does the series converge absolutely?\\
-\noindent\textbf{Solution:}\\
-Looking at the series $\sum\limits_{n=1}^\infty |\frac{(-1)^{n+1}}{n5^n}|$, we find
-\begin{eqnarray*}
-\sum\limits_{n=1}^\infty |\frac{(-1)^{n+1}}{n5^n}| &=& \sum\limits_{n=1}^\infty \frac{1}{n5^n} 
-\end{eqnarray*}
-Using the ratio test, we find
-\begin{eqnarray*}
- \frac{1}{(n+1)5^{n+1}} \cdot \frac{n5^n}{1}  &=&  \frac{1}{(n+1)5^{n}\cdot 5} \cdot \frac{n5^n}{1}  \\
- &=&  \frac{1}{(n+1) \cdot 5} \cdot \frac{n}{1}  \\
-  &=&  \frac{1}{5} \cdot \frac{n}{n+1} \rightarrow  \frac{1}{5} \text{ as } n \rightarrow \infty
-\end{eqnarray*}
-Since $\frac{1}{5} < 1$,  $\sum\limits_{n=1}^\infty \frac{(-1)^{n+1}}{n5^n}$ converges absolutely.
-
- \vspace{.5in}
-\item Does the series converge conditionally?\\
-\noindent\textbf{Solution:}\\
-$\boxed{\text{No}}$, since it converges absolutely.
-
- \vspace{.5in}
-\item What are the fewest number of terms necessary to approximate the sum of the series with an error bound of no more than $0.01$?\\
-\noindent\textbf{Solution:}\\
-Note that since our series is alternating, we can just look at the first neglected term, i.e. look for the first $a_n$ that satisfies $|a_n|<0.01$.
-
-$|a_2|=  \frac{1}{2\cdot 5^2} = \frac{1}{50} > 0.01$
-
-$|a_3|=  \frac{1}{3\cdot 5^3} = \frac{1}{375}< 0.01$, therefore $\boxed{2}$ terms are needed.
-
-
+\item Using the Mclaurin series for $\ln (1+x)$, determine the Mclaurin series for $\ln (1+x^3)$.  Answers must be in closed form (Sigma notation).
+\vspace{2in}
+\item Using your answer for part $a$, find the power series representation for the general antiderivative of $\ln (1+x^3)$. Answers must be in closed form (Sigma notation).
+\vspace{2in}
+\item Assume that the series you found in part $b$ converges for all $|x| < 1$. Use your answer in part $b$ to determine a series that represents $\int_0^{0.2} \ln (1+x^3) \text{ } dx$. Answers must be in closed form (Sigma notation).
 \end{enumerate}
+\newpage
+
 
 \end{enumerate}
 
